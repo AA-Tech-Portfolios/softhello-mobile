@@ -6,7 +6,7 @@ import { useRouter } from "expo-router";
 import { getLanguageBase, type ProfileShortcutLayout, type ProfileWidthPreference, type SoftHelloVisibility, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { nsnColors, profileVibes } from "@/lib/nsn-data";
+import { softHelloColors, profileVibes } from "@/lib/nsn-data";
 import { getProfilePreferenceCopy } from "@/lib/profile-preference-translations";
 import { isAllowedDisplayName, nameNotAllowedMessage } from "@/lib/profile-validation";
 import { canMeetInPerson, deriveVerificationLevel, getMeetingSafetyCopy, getVerificationLevelLabel, type SoftHelloComfortPreference, verificationLevels } from "@/lib/softhello-mvp";
@@ -984,7 +984,7 @@ export default function ProfileScreen() {
             accessibilityLabel={copy.rows.settings}
             accessibilityHint={screenReaderHints ? "Opens profile shortcuts, layout, width, and settings links." : undefined}
           >
-            <IconSymbol name="more" color={isDay ? "#0B1220" : nsnColors.text} size={23} />
+            <IconSymbol name="more" color={isDay ? "#0B1220" : softHelloColors.text} size={23} />
           </TouchableOpacity>
           {showProfileMenu ? (
             <View style={[styles.profileMenu, isDay && styles.dayCard]}>
@@ -1007,7 +1007,7 @@ export default function ProfileScreen() {
                     accessibilityRole="button"
                     accessibilityLabel={getRowLabel(row.key)}
                   >
-                    <IconSymbol name={row.icon} color={isDay ? "#3B4A63" : nsnColors.muted} size={20} />
+                    <IconSymbol name={row.icon} color={isDay ? "#3B4A63" : softHelloColors.muted} size={20} />
                     <Text style={[styles.profileMenuText, isDay && styles.dayTitle]}>{getRowLabel(row.key)}</Text>
                     <Text style={[styles.profileMenuChevron, isDay && styles.dayMutedText]}>›</Text>
                   </TouchableOpacity>
@@ -1211,7 +1211,7 @@ export default function ProfileScreen() {
               ) : showNameSaved ? (
                 <Text style={styles.editText}>{copy.saved}</Text>
               ) : (
-                <IconSymbol name="edit" color={isDay ? "#3B4A63" : nsnColors.muted} size={18} />
+                <IconSymbol name="edit" color={isDay ? "#3B4A63" : softHelloColors.muted} size={18} />
               )}
             </TouchableOpacity>
           </View>
@@ -1377,7 +1377,7 @@ export default function ProfileScreen() {
                 style={[styles.row, index < expandedProfileRows.length - 1 && styles.rowBorder, isDay && index < expandedProfileRows.length - 1 && styles.dayRowBorder]}
               >
 
-                <IconSymbol name={row.icon} color={isDay ? "#3B4A63" : nsnColors.muted} size={22} />
+                <IconSymbol name={row.icon} color={isDay ? "#3B4A63" : softHelloColors.muted} size={22} />
                 <Text style={[styles.rowLabel, isDay && styles.dayTitle, isRtl && styles.rtlText]}>{getRowLabel(row.key)}</Text>
                 <Text style={[styles.rowChevron, isDay && styles.dayMutedText]}>›</Text>
               </TouchableOpacity>
@@ -1411,7 +1411,7 @@ export default function ProfileScreen() {
                   value={draftContactEmail}
                   onChangeText={setDraftContactEmail}
                   placeholder={profileVerificationCopy.emailPlaceholder}
-                  placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+                  placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
                   keyboardType="email-address"
                   autoCapitalize="none"
                   style={[styles.verificationInput, isDay && styles.dayInput, isRtl && styles.rtlInput]}
@@ -1423,7 +1423,7 @@ export default function ProfileScreen() {
                   value={draftContactPhone}
                   onChangeText={setDraftContactPhone}
                   placeholder={profileVerificationCopy.phonePlaceholder}
-                  placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+                  placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
                   keyboardType="phone-pad"
                   style={[styles.verificationInput, isDay && styles.dayInput, isRtl && styles.rtlInput]}
                 />
@@ -1455,7 +1455,7 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: nsnColors.background },
+  screen: { flex: 1, backgroundColor: softHelloColors.background },
   dayContainer: { backgroundColor: "#EAF4FF" },
   content: { width: "100%", maxWidth: 1120, alignSelf: "center", paddingHorizontal: 20, paddingTop: 18, paddingBottom: 30 },
   contentWide: { maxWidth: "100%" },
@@ -1463,112 +1463,112 @@ const styles = StyleSheet.create({
   topRight: { alignItems: "flex-end", marginBottom: 8, zIndex: 20 },
   settingsButton: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.04)" },
   dayIconButton: { backgroundColor: "#DCEEFF" },
-  profileMenu: { width: "100%", maxWidth: 410, maxHeight: 720, marginTop: 8, borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface },
+  profileMenu: { width: "100%", maxWidth: 410, maxHeight: 720, marginTop: 8, borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface },
   profileMenuScroll: { width: "100%" },
   profileMenuContent: { padding: 8 },
-  profileMenuTitle: { color: nsnColors.muted, fontSize: 12, fontWeight: "900", lineHeight: 17, paddingHorizontal: 10, paddingVertical: 5 },
+  profileMenuTitle: { color: softHelloColors.muted, fontSize: 12, fontWeight: "900", lineHeight: 17, paddingHorizontal: 10, paddingVertical: 5 },
   profileMenuItem: { minHeight: 43, borderRadius: 12, flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 10 },
-  profileMenuText: { flex: 1, color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  profileMenuChevron: { color: nsnColors.muted, fontSize: 20, fontWeight: "900", lineHeight: 24 },
-  profileMenuDivider: { height: 1, backgroundColor: nsnColors.border, marginVertical: 7 },
+  profileMenuText: { flex: 1, color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  profileMenuChevron: { color: softHelloColors.muted, fontSize: 20, fontWeight: "900", lineHeight: 24 },
+  profileMenuDivider: { height: 1, backgroundColor: softHelloColors.border, marginVertical: 7 },
   profileLayoutStack: { gap: 8 },
-  profileLayoutOption: { minHeight: 58, borderRadius: 13, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.035)", flexDirection: "row", alignItems: "center", gap: 10, padding: 10 },
+  profileLayoutOption: { minHeight: 58, borderRadius: 13, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.035)", flexDirection: "row", alignItems: "center", gap: 10, padding: 10 },
   daySoftOption: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6" },
-  profileLayoutOptionActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary },
+  profileLayoutOptionActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary },
   profileLayoutBody: { flex: 1 },
-  profileLayoutTitle: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  profileLayoutCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
-  profileLayoutCheck: { width: 22, color: nsnColors.muted, fontSize: 16, fontWeight: "900", textAlign: "center" },
+  profileLayoutTitle: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  profileLayoutCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  profileLayoutCheck: { width: 22, color: softHelloColors.muted, fontSize: 16, fontWeight: "900", textAlign: "center" },
   profileLayoutTextActive: { color: "#FFFFFF" },
   profileHeader: { alignItems: "center", marginTop: 4, marginBottom: 22 },
   avatar: { width: 90, height: 90, borderRadius: 45, alignItems: "center", justifyContent: "center", backgroundColor: "#1590C9" },
   avatarImage: { width: 90, height: 90, borderRadius: 45 },
-  avatarRing: { width: 104, height: 104, borderRadius: 52, alignItems: "center", justifyContent: "center", borderWidth: 2, borderColor: nsnColors.primary, backgroundColor: "rgba(56,72,255,0.10)" },
-  avatarText: { color: nsnColors.text, fontSize: 38, fontWeight: "900" },
-  photoButton: { marginTop: 10, paddingHorizontal: 14, paddingVertical: 7, borderRadius: 999, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, alignSelf: "center", },
+  avatarRing: { width: 104, height: 104, borderRadius: 52, alignItems: "center", justifyContent: "center", borderWidth: 2, borderColor: softHelloColors.primary, backgroundColor: "rgba(56,72,255,0.10)" },
+  avatarText: { color: softHelloColors.text, fontSize: 38, fontWeight: "900" },
+  photoButton: { marginTop: 10, paddingHorizontal: 14, paddingVertical: 7, borderRadius: 999, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, alignSelf: "center", },
   dayPhotoButton: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
   photoButtonText: { color: "#7786FF", fontSize: 12, fontWeight: "800" },
   dayPhotoButtonText: { color: "#3949DB" },
-  visibilityModeCard: { width: "100%", maxWidth: 370, borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.025)", padding: 12, marginTop: 12 },
+  visibilityModeCard: { width: "100%", maxWidth: 370, borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.025)", padding: 12, marginTop: 12 },
   dayVisibilityModeCard: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
-  visibilityModeTitle: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18, marginBottom: 8, textAlign: "center" },
-  visibilityModeSegmented: { minHeight: 40, flexDirection: "row", borderRadius: 14, borderWidth: 1, borderColor: nsnColors.border, overflow: "hidden", backgroundColor: "rgba(255,255,255,0.04)" },
+  visibilityModeTitle: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18, marginBottom: 8, textAlign: "center" },
+  visibilityModeSegmented: { minHeight: 40, flexDirection: "row", borderRadius: 14, borderWidth: 1, borderColor: softHelloColors.border, overflow: "hidden", backgroundColor: "rgba(255,255,255,0.04)" },
   dayVisibilityModeSegmented: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6" },
   visibilityModeOption: { flex: 1, minHeight: 38, alignItems: "center", justifyContent: "center", paddingHorizontal: 8 },
   dayVisibilityModeOption: { backgroundColor: "#F8FBFF" },
-  visibilityModeOptionActive: { backgroundColor: nsnColors.primary },
+  visibilityModeOptionActive: { backgroundColor: softHelloColors.primary },
   dayVisibilityModeOptionActive: { backgroundColor: "#3848FF" },
-  visibilityModeText: { color: nsnColors.muted, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
+  visibilityModeText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
   visibilityModeTextActive: { color: "#FFFFFF" },
-  visibilityModeCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 8, textAlign: "center" },
-  trustCard: { borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 16, marginBottom: 16 },
+  visibilityModeCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 8, textAlign: "center" },
+  trustCard: { borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 16, marginBottom: 16 },
   trustHeader: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 6 },
-  trustPill: { color: nsnColors.warning, borderColor: "rgba(247,200,91,0.45)", borderWidth: 1, borderRadius: 999, paddingHorizontal: 9, paddingVertical: 4, fontSize: 11, fontWeight: "900", overflow: "hidden" },
-  trustPillReady: { color: nsnColors.green, borderColor: "rgba(114,214,126,0.45)" },
+  trustPill: { color: softHelloColors.warning, borderColor: "rgba(247,200,91,0.45)", borderWidth: 1, borderRadius: 999, paddingHorizontal: 9, paddingVertical: 4, fontSize: 11, fontWeight: "900", overflow: "hidden" },
+  trustPillReady: { color: softHelloColors.green, borderColor: "rgba(114,214,126,0.45)" },
   dayTrustPill: { color: "#7C5A00", backgroundColor: "#FFF7D8", borderColor: "#D4A91E" },
   dayTrustPillReady: { color: "#0F6B2F", backgroundColor: "#E8F8EE", borderColor: "#55A96E" },
-  trustCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 19 },
+  trustCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 19 },
   verificationSteps: { flexDirection: "row", flexWrap: "wrap", gap: 7, marginTop: 12 },
-  verificationStep: { borderRadius: 999, borderWidth: 1, borderColor: nsnColors.border, paddingHorizontal: 9, paddingVertical: 5, backgroundColor: "rgba(255,255,255,0.03)" },
-  verificationStepActive: { borderColor: nsnColors.primary, backgroundColor: "rgba(56,72,255,0.22)" },
-  verificationStepText: { color: nsnColors.muted, fontSize: 11, fontWeight: "800" },
-  verificationStepTextActive: { color: nsnColors.text },
+  verificationStep: { borderRadius: 999, borderWidth: 1, borderColor: softHelloColors.border, paddingHorizontal: 9, paddingVertical: 5, backgroundColor: "rgba(255,255,255,0.03)" },
+  verificationStepActive: { borderColor: softHelloColors.primary, backgroundColor: "rgba(56,72,255,0.22)" },
+  verificationStepText: { color: softHelloColors.muted, fontSize: 11, fontWeight: "800" },
+  verificationStepTextActive: { color: softHelloColors.text },
   dayVerificationStep: { backgroundColor: "#F8FBFF", borderColor: "#6D83A8" },
   dayVerificationStepActive: { backgroundColor: "#3848FF", borderColor: "#3848FF" },
   dayVerificationStepText: { color: "#38465F" },
   dayVerificationStepTextActive: { color: "#FFFFFF" },
-  reviewSettingsButton: { alignSelf: "flex-start", minHeight: 36, borderRadius: 13, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 13, marginTop: 12 },
+  reviewSettingsButton: { alignSelf: "flex-start", minHeight: 36, borderRadius: 13, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 13, marginTop: 12 },
   reviewSettingsText: { color: "#FFFFFF", fontSize: 12, fontWeight: "900", lineHeight: 17 },
   modalBackdrop: { flex: 1, justifyContent: "flex-end", backgroundColor: "rgba(2,8,20,0.42)", padding: 16 },
-  verificationSheet: { borderRadius: 22, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 16 },
+  verificationSheet: { borderRadius: 22, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 16 },
   dayModalSheet: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6" },
-  verificationReviewTitle: { color: nsnColors.text, fontSize: 20, fontWeight: "900", lineHeight: 26 },
-  verificationReviewCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 19, marginTop: 4, marginBottom: 12 },
+  verificationReviewTitle: { color: softHelloColors.text, fontSize: 20, fontWeight: "900", lineHeight: 26 },
+  verificationReviewCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 19, marginTop: 4, marginBottom: 12 },
   verificationReviewList: { gap: 8 },
-  verificationReviewRow: { minHeight: 56, borderRadius: 14, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 12, paddingVertical: 9 },
-  verificationReviewLabel: { flex: 1, color: nsnColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15 },
-  verificationReviewValue: { flex: 1.5, color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  verificationInputGroup: { borderRadius: 14, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 12, paddingVertical: 9 },
-  verificationInput: { minHeight: 42, borderRadius: 12, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, color: nsnColors.text, fontSize: 14, fontWeight: "800", paddingHorizontal: 12, marginTop: 7 },
+  verificationReviewRow: { minHeight: 56, borderRadius: 14, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 12, paddingVertical: 9 },
+  verificationReviewLabel: { flex: 1, color: softHelloColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15 },
+  verificationReviewValue: { flex: 1.5, color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
+  verificationInputGroup: { borderRadius: 14, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 12, paddingVertical: 9 },
+  verificationInput: { minHeight: 42, borderRadius: 12, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, color: softHelloColors.text, fontSize: 14, fontWeight: "800", paddingHorizontal: 12, marginTop: 7 },
   dayInput: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6", color: "#0B1220" },
-  confirmReviewButton: { minHeight: 48, borderRadius: 15, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center", marginTop: 12 },
+  confirmReviewButton: { minHeight: 48, borderRadius: 15, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center", marginTop: 12 },
   confirmReviewText: { color: "#FFFFFF", fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  secondaryReviewButton: { minHeight: 46, borderRadius: 15, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.04)", alignItems: "center", justifyContent: "center", marginTop: 9 },
-  secondaryReviewText: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  photoMenu: { marginTop: 8, width: 185, borderRadius: 14, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, overflow: "hidden", alignSelf: "center", },
-  photoMenuItem: { paddingVertical: 12, paddingHorizontal: 14, borderBottomWidth: 1, borderBottomColor: nsnColors.border, },
+  secondaryReviewButton: { minHeight: 46, borderRadius: 15, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.04)", alignItems: "center", justifyContent: "center", marginTop: 9 },
+  secondaryReviewText: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  photoMenu: { marginTop: 8, width: 185, borderRadius: 14, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, overflow: "hidden", alignSelf: "center", },
+  photoMenuItem: { paddingVertical: 12, paddingHorizontal: 14, borderBottomWidth: 1, borderBottomColor: softHelloColors.border, },
   photoMenuItemLast: { paddingVertical: 12, paddingHorizontal: 14, },
-  photoMenuText: { color: nsnColors.text, fontSize: 13, fontWeight: "700", textAlign: "center", },
+  photoMenuText: { color: softHelloColors.text, fontSize: 13, fontWeight: "700", textAlign: "center", },
   photoMenuDeleteText: { color: "#FF6B6B", fontSize: 13, fontWeight: "800", textAlign: "center", },
-  name: { color: nsnColors.text, fontSize: 26, fontWeight: "800", lineHeight: 33 },
+  name: { color: softHelloColors.text, fontSize: 26, fontWeight: "800", lineHeight: 33 },
   dayTitle: { color: "#0B1220" },
   dayMutedText: { color: "#3B4A63" },
-  nameInput: { color: nsnColors.text, fontSize: 26, fontWeight: "800", lineHeight: 33, textAlign: "center", minWidth: 120, borderBottomWidth: 1, borderBottomColor: nsnColors.primary, paddingVertical: 2 },
+  nameInput: { color: softHelloColors.text, fontSize: 26, fontWeight: "800", lineHeight: 33, textAlign: "center", minWidth: 120, borderBottomWidth: 1, borderBottomColor: softHelloColors.primary, paddingVertical: 2 },
   nameRow: { flexDirection: "row", alignItems: "center", gap: 7, marginTop: 12 },
   cardTitleRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 8 },
   sectionTitleRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 10 },
-  sectionTitle: { color: nsnColors.text, fontSize: 16, fontWeight: "800", lineHeight: 23 },
+  sectionTitle: { color: softHelloColors.text, fontSize: 16, fontWeight: "800", lineHeight: 23 },
   editText: { color: "#7786FF", fontSize: 13, fontWeight: "700" },
   preferenceGrid: { flexDirection: "row", flexWrap: "wrap", gap: 9, marginTop: 2 },
   vibeGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10, marginBottom: 20 },
-  vibeChip: { color: nsnColors.text, fontSize: 13, lineHeight: 18, fontWeight: "700", paddingHorizontal: 13, paddingVertical: 9, borderRadius: 14, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, overflow: "hidden" },
-  comfortChipActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary, color: nsnColors.text },
+  vibeChip: { color: softHelloColors.text, fontSize: 13, lineHeight: 18, fontWeight: "700", paddingHorizontal: 13, paddingVertical: 9, borderRadius: 14, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, overflow: "hidden" },
+  comfortChipActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary, color: softHelloColors.text },
   dayComfortChipActive: { backgroundColor: "#3848FF", borderColor: "#3848FF", color: "#FFFFFF" },
   vibeChipMuted: { opacity: 0.45, borderStyle: "dashed" },
   rtlRow: { flexDirection: "row-reverse" },
   rtlText: { textAlign: "right", writingDirection: "rtl" },
   inlineMessage: { color: "#F7C85B", fontSize: 12, lineHeight: 17, fontWeight: "700", marginTop: -10, marginBottom: 16, textAlign: "center" },
   dayMessage: { color: "#7C5A00" },
-  aboutCard: { borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.025)", padding: 16, marginBottom: 16 },
+  aboutCard: { borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.025)", padding: 16, marginBottom: 16 },
   aboutInput: { minHeight: 80, textAlignVertical: "top", padding: 0, margin: 0, borderWidth: 0, backgroundColor: "transparent", ...(Platform.OS === "web" ? ({ outlineStyle: "none", outlineWidth: 0, outlineColor: "transparent", boxShadow: "none", appearance: "none", caretColor: "#7786FF" } as any) : {}) },
-  aboutText: { color: nsnColors.text, fontSize: 15, lineHeight: 23 },
-  settingsList: { borderRadius: 18, overflow: "hidden", borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface },
+  aboutText: { color: softHelloColors.text, fontSize: 15, lineHeight: 23 },
+  settingsList: { borderRadius: 18, overflow: "hidden", borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface },
   row: { minHeight: 54, flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 14 },
-  rowBorder: { borderBottomWidth: 1, borderBottomColor: nsnColors.border },
+  rowBorder: { borderBottomWidth: 1, borderBottomColor: softHelloColors.border },
   dayRowBorder: { borderBottomColor: "#B8C9E6" },
-  rowIcon: { width: 30, color: nsnColors.text, fontSize: 17 },
-  rowLabel: { flex: 1, color: nsnColors.text, fontSize: 14, fontWeight: "600", lineHeight: 20 },
-  rowChevron: { color: nsnColors.muted, fontSize: 26, lineHeight: 30 },
+  rowIcon: { width: 30, color: softHelloColors.text, fontSize: 17 },
+  rowLabel: { flex: 1, color: softHelloColors.text, fontSize: 14, fontWeight: "600", lineHeight: 20 },
+  rowChevron: { color: softHelloColors.muted, fontSize: 26, lineHeight: 30 },
   dayCard: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
   softSurfaceCard: { backgroundColor: "rgba(220,238,255,0.72)", borderColor: "rgba(184,201,230,0.56)" },
   clearBorderCard: { borderColor: "#6F8BB8", borderWidth: 1.5 },

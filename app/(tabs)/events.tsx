@@ -6,7 +6,7 @@ import { useRouter } from "expo-router";
 import { getLanguageBase, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { nsnColors } from "@/lib/nsn-data";
+import { softHelloColors } from "@/lib/nsn-data";
 import { canMeetInPerson, deriveVerificationLevel, getMeetingSafetyCopy, getVerificationLevelLabel } from "@/lib/softhello-mvp";
 
 const CREATED_EVENTS_KEY = "nsn.created-events.v1";
@@ -318,7 +318,7 @@ export default function EventsScreen() {
           accessibilityRole="button"
           accessibilityState={{ disabled: !canCreateMeetups }}
         >
-          <IconSymbol name="add" color={nsnColors.text} size={19} />
+          <IconSymbol name="add" color={softHelloColors.text} size={19} />
           <Text style={[styles.createButtonText, isRtl && styles.rtlText]}>{copy.createEvent}</Text>
         </TouchableOpacity>
 
@@ -528,7 +528,7 @@ function LabeledInput({
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+        placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
         multiline={multiline}
         textAlignVertical={multiline ? "top" : "center"}
         style={[styles.input, multiline && styles.textArea, isDay && styles.dayInput, isRtl && styles.rtlInput]}
@@ -538,10 +538,10 @@ function LabeledInput({
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: nsnColors.background },
+  screen: { flex: 1, backgroundColor: softHelloColors.background },
   container: {
     flex: 1,
-    backgroundColor: nsnColors.background,
+    backgroundColor: softHelloColors.background,
     padding: 20,
   },
   content: { padding: 20, paddingBottom: 32 },
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
   rtlInput: { textAlign: "right", writingDirection: "rtl" },
 
   title: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 28,
     fontWeight: "900",
     marginBottom: 8,
@@ -564,7 +564,7 @@ const styles = StyleSheet.create({
   },
 
   subtitle: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 15,
     lineHeight: 22,
     marginBottom: 20,
@@ -577,7 +577,7 @@ const styles = StyleSheet.create({
   },
 
   createButton: {
-    backgroundColor: nsnColors.primary,
+    backgroundColor: softHelloColors.primary,
     borderRadius: 15,
     paddingVertical: 14,
     alignItems: "center",
@@ -591,7 +591,7 @@ const styles = StyleSheet.create({
   },
 
   createButtonText: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 15,
     fontWeight: "800",
   },
@@ -599,15 +599,15 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: nsnColors.border,
-    backgroundColor: nsnColors.surface,
+    borderColor: softHelloColors.border,
+    backgroundColor: softHelloColors.surface,
     padding: 18,
   },
   verificationGateCard: {
     marginBottom: 20,
   },
   verificationGateStatus: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 12,
     fontWeight: "800",
     lineHeight: 18,
@@ -617,27 +617,27 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     minHeight: 38,
     borderRadius: 13,
-    backgroundColor: nsnColors.primary,
+    backgroundColor: softHelloColors.primary,
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 14,
     marginTop: 13,
   },
-  reviewSettingsText: { color: nsnColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17 },
+  reviewSettingsText: { color: softHelloColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17 },
   dayCard: {
     backgroundColor: "#DCEEFF",
     borderColor: "#B8C9E6",
   },
 
   cardTitle: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 17,
     fontWeight: "800",
     marginBottom: 8,
   },
 
   cardText: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 14,
     lineHeight: 22,
   },
@@ -645,44 +645,44 @@ const styles = StyleSheet.create({
   eventCard: {
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: nsnColors.border,
-    backgroundColor: nsnColors.surface,
+    borderColor: softHelloColors.border,
+    backgroundColor: softHelloColors.surface,
     padding: 16,
   },
   eventHeader: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 10 },
   noiseBadge: { borderRadius: 12, backgroundColor: "rgba(247,200,91,0.18)", paddingHorizontal: 10, paddingVertical: 5 },
   quietBadge: { backgroundColor: "rgba(24,200,209,0.18)" },
   livelyBadge: { backgroundColor: "rgba(114,214,126,0.18)" },
-  noiseBadgeText: { color: nsnColors.text, fontSize: 11, fontWeight: "900" },
-  eventDate: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginBottom: 0 },
-  eventTitle: { color: nsnColors.text, fontSize: 18, fontWeight: "900", lineHeight: 24, marginBottom: 6 },
-  eventMeta: { color: nsnColors.muted, fontSize: 13, lineHeight: 19, marginBottom: 0 },
-  eventDescription: { color: nsnColors.text, fontSize: 14, lineHeight: 21, marginTop: 10 },
+  noiseBadgeText: { color: softHelloColors.text, fontSize: 11, fontWeight: "900" },
+  eventDate: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginBottom: 0 },
+  eventTitle: { color: softHelloColors.text, fontSize: 18, fontWeight: "900", lineHeight: 24, marginBottom: 6 },
+  eventMeta: { color: softHelloColors.muted, fontSize: 13, lineHeight: 19, marginBottom: 0 },
+  eventDescription: { color: softHelloColors.text, fontSize: 14, lineHeight: 21, marginTop: 10 },
   sheetContent: { paddingHorizontal: 20, paddingTop: 10, paddingBottom: 28 },
   sheetHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", gap: 14, marginBottom: 18 },
-  sheetTitle: { color: nsnColors.text, fontSize: 26, fontWeight: "900", lineHeight: 32 },
-  sheetSubtitle: { color: nsnColors.muted, fontSize: 14, lineHeight: 20, marginTop: 3 },
+  sheetTitle: { color: softHelloColors.text, fontSize: 26, fontWeight: "900", lineHeight: 32 },
+  sheetSubtitle: { color: softHelloColors.muted, fontSize: 14, lineHeight: 20, marginTop: 3 },
   closeButton: {
     width: 42,
     height: 42,
     borderRadius: 21,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: nsnColors.surface,
+    backgroundColor: softHelloColors.surface,
     borderWidth: 1,
-    borderColor: nsnColors.border,
+    borderColor: softHelloColors.border,
   },
   dayCloseButton: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6" },
-  closeText: { color: nsnColors.text, fontSize: 28, lineHeight: 32, fontWeight: "700" },
+  closeText: { color: softHelloColors.text, fontSize: 28, lineHeight: 32, fontWeight: "700" },
   formStack: { gap: 14 },
-  label: { color: nsnColors.text, fontSize: 13, lineHeight: 18, fontWeight: "800", marginBottom: 7 },
+  label: { color: softHelloColors.text, fontSize: 13, lineHeight: 18, fontWeight: "800", marginBottom: 7 },
   input: {
     minHeight: 48,
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: nsnColors.border,
-    backgroundColor: nsnColors.surface,
-    color: nsnColors.text,
+    borderColor: softHelloColors.border,
+    backgroundColor: softHelloColors.surface,
+    color: softHelloColors.text,
     fontSize: 14,
     paddingHorizontal: 14,
   },
@@ -696,21 +696,21 @@ const styles = StyleSheet.create({
     height: 42,
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: nsnColors.border,
-    backgroundColor: nsnColors.surface,
+    borderColor: softHelloColors.border,
+    backgroundColor: softHelloColors.surface,
     alignItems: "center",
     justifyContent: "center",
   },
   dayNoiseOption: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6" },
-  noiseOptionActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary },
-  noiseOptionText: { color: nsnColors.muted, fontSize: 12, fontWeight: "900", marginBottom: 0 },
-  noiseOptionTextActive: { color: nsnColors.text },
+  noiseOptionActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary },
+  noiseOptionText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "900", marginBottom: 0 },
+  noiseOptionTextActive: { color: softHelloColors.text },
   mapPanel: {
     minHeight: 174,
     borderRadius: 18,
     borderWidth: 1,
     borderColor: "#284476",
-    backgroundColor: nsnColors.surfaceRaised,
+    backgroundColor: softHelloColors.surfaceRaised,
     overflow: "hidden",
   },
   dayMapPanel: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
@@ -722,16 +722,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "rgba(255,255,255,0.08)",
   },
-  mapPin: { color: nsnColors.cyan, fontSize: 32, fontWeight: "900" },
+  mapPin: { color: softHelloColors.cyan, fontSize: 32, fontWeight: "900" },
   mapWatermark: { position: "absolute", right: 12, bottom: 10, color: "#A6B1C7", fontSize: 10, fontWeight: "800" },
-  mapTitle: { color: nsnColors.text, fontSize: 15, fontWeight: "900", lineHeight: 21, marginHorizontal: 14, marginTop: 12 },
-  mapCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 18, marginHorizontal: 14, marginTop: 4, marginBottom: 13 },
+  mapTitle: { color: softHelloColors.text, fontSize: 15, fontWeight: "900", lineHeight: 21, marginHorizontal: 14, marginTop: 12 },
+  mapCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 18, marginHorizontal: 14, marginTop: 4, marginBottom: 13 },
   placeList: { gap: 9 },
   placeOption: {
     minHeight: 64,
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: nsnColors.border,
+    borderColor: softHelloColors.border,
     backgroundColor: "rgba(255,255,255,0.03)",
     flexDirection: "row",
     alignItems: "center",
@@ -740,34 +740,34 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   dayPlaceOption: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6" },
-  placeOptionActive: { borderColor: nsnColors.primary },
+  placeOptionActive: { borderColor: softHelloColors.primary },
   placeCopy: { flex: 1 },
-  placeName: { color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  placeAddress: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginBottom: 0 },
-  placeCheck: { width: 22, color: nsnColors.muted, fontSize: 16, fontWeight: "900", textAlign: "right" },
-  placeCheckActive: { color: nsnColors.primary },
+  placeName: { color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
+  placeAddress: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginBottom: 0 },
+  placeCheck: { width: 22, color: softHelloColors.muted, fontSize: 16, fontWeight: "900", textAlign: "right" },
+  placeCheckActive: { color: softHelloColors.primary },
   saveButton: {
     height: 54,
     borderRadius: 17,
-    backgroundColor: nsnColors.primary,
+    backgroundColor: softHelloColors.primary,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 22,
   },
   saveButtonDisabled: { opacity: 0.42 },
-  saveButtonText: { color: nsnColors.text, fontSize: 16, fontWeight: "900" },
+  saveButtonText: { color: softHelloColors.text, fontSize: 16, fontWeight: "900" },
   modalBackdrop: { flex: 1, justifyContent: "flex-end", backgroundColor: "rgba(2,8,20,0.42)", padding: 16 },
-  verificationSheet: { borderRadius: 22, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 16 },
+  verificationSheet: { borderRadius: 22, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 16 },
   dayModalSheet: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6" },
-  sheetReviewTitle: { color: nsnColors.text, fontSize: 20, fontWeight: "900", lineHeight: 26 },
-  sheetReviewCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 19, marginTop: 4, marginBottom: 12 },
+  sheetReviewTitle: { color: softHelloColors.text, fontSize: 20, fontWeight: "900", lineHeight: 26 },
+  sheetReviewCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 19, marginTop: 4, marginBottom: 12 },
   reviewList: { gap: 8 },
-  reviewRow: { minHeight: 56, borderRadius: 14, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 12, paddingVertical: 9 },
+  reviewRow: { minHeight: 56, borderRadius: 14, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.04)", paddingHorizontal: 12, paddingVertical: 9 },
   dayReviewRow: { backgroundColor: "#EAF4FF", borderColor: "#B8C9E6" },
-  reviewLabel: { color: nsnColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15, marginBottom: 2 },
-  reviewValue: { color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  confirmReviewButton: { minHeight: 48, borderRadius: 15, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center", marginTop: 12 },
-  confirmReviewText: { color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  secondaryReviewButton: { minHeight: 46, borderRadius: 15, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.04)", alignItems: "center", justifyContent: "center", marginTop: 9 },
-  secondaryReviewText: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  reviewLabel: { color: softHelloColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15, marginBottom: 2 },
+  reviewValue: { color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
+  confirmReviewButton: { minHeight: 48, borderRadius: 15, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center", marginTop: 12 },
+  confirmReviewText: { color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
+  secondaryReviewButton: { minHeight: 46, borderRadius: 15, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.04)", alignItems: "center", justifyContent: "center", marginTop: 9 },
+  secondaryReviewText: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
 });

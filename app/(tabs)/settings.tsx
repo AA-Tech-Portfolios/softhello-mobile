@@ -5,7 +5,7 @@ import { useRouter } from "expo-router";
 import { appPalettes, getLanguageBase, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { nsnColors } from "@/lib/nsn-data";
+import { softHelloColors } from "@/lib/nsn-data";
 import { createSettingsToggleSections, selectSettingsPalette, toggleSettingsDropdown, type SettingsDropdownName } from "@/lib/settings-controls";
 
 type SettingsCopy = {
@@ -92,7 +92,7 @@ const englishCopy: SettingsCopy = {
   friendsOfFriendsOnly: "Friends-of-friends only",
   friendsOfFriendsOnlyCopy: "Prefer people connected through your trusted network.",
   appLanguage: "App language",
-  appLanguageCopy: "Choose the language used across NSN.",
+  appLanguageCopy: "Choose the language used across SoftHello.",
   translateMeetupsChats: "Translate meetups and chats",
   translateMeetupsChatsCopy: "Show event details and chat messages in this language.",
   appearance: "Appearance",
@@ -143,7 +143,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "أصدقاء الأصدقاء فقط",
     friendsOfFriendsOnlyCopy: "فضّل الأشخاص المرتبطين بشبكتك الموثوقة.",
     appLanguage: "لغة التطبيق",
-    appLanguageCopy: "اختر اللغة المستخدمة في NSN.",
+    appLanguageCopy: "اختر اللغة المستخدمة في SoftHello.",
     translateMeetupsChats: "ترجمة اللقاءات والدردشات",
     translateMeetupsChatsCopy: "اعرض تفاصيل الفعاليات ورسائل الدردشة بهذه اللغة.",
     restartOnboarding: "إعادة بدء إعداد SoftHello",
@@ -169,7 +169,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "仅限朋友的朋友",
     friendsOfFriendsOnlyCopy: "优先选择来自可信关系网络的人。",
     appLanguage: "应用语言",
-    appLanguageCopy: "选择 NSN 使用的语言。",
+    appLanguageCopy: "选择 SoftHello 使用的语言。",
     translateMeetupsChats: "翻译聚会和聊天",
     translateMeetupsChatsCopy: "用此语言显示活动详情和聊天消息。",
     restartOnboarding: "重新开始 SoftHello 引导",
@@ -195,7 +195,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Amis d'amis uniquement",
     friendsOfFriendsOnlyCopy: "Préférez les personnes liées à votre réseau de confiance.",
     appLanguage: "Langue de l'application",
-    appLanguageCopy: "Choisissez la langue utilisée dans NSN.",
+    appLanguageCopy: "Choisissez la langue utilisée dans SoftHello.",
     translateMeetupsChats: "Traduire les rencontres et discussions",
     translateMeetupsChatsCopy: "Afficher les détails et messages dans cette langue.",
     restartOnboarding: "Recommencer l'accueil SoftHello",
@@ -221,7 +221,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Nur Freunde von Freunden",
     friendsOfFriendsOnlyCopy: "Bevorzuge Personen aus deinem vertrauenswürdigen Netzwerk.",
     appLanguage: "App-Sprache",
-    appLanguageCopy: "Wähle die Sprache für NSN.",
+    appLanguageCopy: "Wähle die Sprache für SoftHello.",
     translateMeetupsChats: "Treffen und Chats übersetzen",
     translateMeetupsChatsCopy: "Zeige Eventdetails und Chatnachrichten in dieser Sprache.",
     restartOnboarding: "SoftHello-Einstieg neu starten",
@@ -247,7 +247,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "חברים של חברים בלבד",
     friendsOfFriendsOnlyCopy: "העדף אנשים שמחוברים דרך הרשת המהימנה שלך.",
     appLanguage: "שפת האפליקציה",
-    appLanguageCopy: "בחר את השפה שבה NSN ישתמש.",
+    appLanguageCopy: "בחר את השפה שבה SoftHello ישתמש.",
     translateMeetupsChats: "תרגום מפגשים וצ'אטים",
     translateMeetupsChatsCopy: "הצג פרטי אירועים והודעות צ'אט בשפה זו.",
     appearance: "מראה",
@@ -295,7 +295,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "केवल दोस्तों के दोस्त",
     friendsOfFriendsOnlyCopy: "अपने भरोसेमंद नेटवर्क से जुड़े लोगों को प्राथमिकता दें।",
     appLanguage: "ऐप भाषा",
-    appLanguageCopy: "NSN में उपयोग की जाने वाली भाषा चुनें।",
+    appLanguageCopy: "SoftHello में उपयोग की जाने वाली भाषा चुनें।",
     translateMeetupsChats: "मीटअप और चैट का अनुवाद करें",
     translateMeetupsChatsCopy: "इवेंट विवरण और चैट संदेश इस भाषा में दिखाएँ।",
     restartOnboarding: "SoftHello परिचय फिर शुरू करें",
@@ -321,7 +321,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Solo amici di amici",
     friendsOfFriendsOnlyCopy: "Preferisci persone collegate alla tua rete fidata.",
     appLanguage: "Lingua dell'app",
-    appLanguageCopy: "Scegli la lingua usata in NSN.",
+    appLanguageCopy: "Scegli la lingua usata in SoftHello.",
     translateMeetupsChats: "Traduci meetup e chat",
     translateMeetupsChatsCopy: "Mostra dettagli eventi e messaggi in questa lingua.",
   },
@@ -342,7 +342,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "友達の友達のみ",
     friendsOfFriendsOnlyCopy: "信頼できるネットワークにつながる人を優先します。",
     appLanguage: "アプリの言語",
-    appLanguageCopy: "NSNで使う言語を選びます。",
+    appLanguageCopy: "SoftHelloで使う言語を選びます。",
     translateMeetupsChats: "ミートアップとチャットを翻訳",
     translateMeetupsChatsCopy: "イベント詳細とチャットをこの言語で表示します。",
     restartOnboarding: "SoftHelloの案内をやり直す",
@@ -368,7 +368,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "친구의 친구만",
     friendsOfFriendsOnlyCopy: "신뢰할 수 있는 네트워크와 연결된 사람을 선호합니다.",
     appLanguage: "앱 언어",
-    appLanguageCopy: "NSN에서 사용할 언어를 선택하세요.",
+    appLanguageCopy: "SoftHello에서 사용할 언어를 선택하세요.",
     translateMeetupsChats: "모임과 채팅 번역",
     translateMeetupsChatsCopy: "이벤트 정보와 채팅 메시지를 이 언어로 표시합니다.",
     restartOnboarding: "SoftHello 온보딩 다시 시작",
@@ -394,7 +394,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "فقط دوستانِ دوستان",
     friendsOfFriendsOnlyCopy: "افراد متصل به شبکه قابل اعتماد خود را ترجیح دهید.",
     appLanguage: "زبان برنامه",
-    appLanguageCopy: "زبان استفاده‌شده در NSN را انتخاب کنید.",
+    appLanguageCopy: "زبان استفاده‌شده در SoftHello را انتخاب کنید.",
     translateMeetupsChats: "ترجمه دیدارها و چت‌ها",
     translateMeetupsChatsCopy: "جزئیات رویداد و پیام‌ها را به این زبان نشان دهید.",
     restartOnboarding: "شروع دوباره آشنایی با SoftHello",
@@ -420,7 +420,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Solo amigos de amigos",
     friendsOfFriendsOnlyCopy: "Prefiere personas conectadas a tu red de confianza.",
     appLanguage: "Idioma de la app",
-    appLanguageCopy: "Elige el idioma usado en NSN.",
+    appLanguageCopy: "Elige el idioma usado en SoftHello.",
     translateMeetupsChats: "Traducir quedadas y chats",
     translateMeetupsChatsCopy: "Muestra detalles de eventos y mensajes en este idioma.",
     restartOnboarding: "Reiniciar bienvenida de SoftHello",
@@ -446,7 +446,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "صرف دوستوں کے دوست",
     friendsOfFriendsOnlyCopy: "اپنے قابل اعتماد نیٹ ورک سے جڑے لوگوں کو ترجیح دیں۔",
     appLanguage: "ایپ کی زبان",
-    appLanguageCopy: "NSN میں استعمال ہونے والی زبان منتخب کریں۔",
+    appLanguageCopy: "SoftHello میں استعمال ہونے والی زبان منتخب کریں۔",
     translateMeetupsChats: "میٹ اپس اور چیٹس کا ترجمہ",
     translateMeetupsChatsCopy: "ایونٹ کی تفصیلات اور چیٹ پیغامات اس زبان میں دکھائیں۔",
     restartOnboarding: "SoftHello تعارف دوبارہ شروع کریں",
@@ -472,7 +472,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "শুধু বন্ধুদের বন্ধু",
     friendsOfFriendsOnlyCopy: "আপনার বিশ্বস্ত নেটওয়ার্কের সঙ্গে যুক্ত মানুষদের অগ্রাধিকার দিন।",
     appLanguage: "অ্যাপের ভাষা",
-    appLanguageCopy: "NSN-এ ব্যবহৃত ভাষা বেছে নিন।",
+    appLanguageCopy: "SoftHello-এ ব্যবহৃত ভাষা বেছে নিন।",
     translateMeetupsChats: "মিটআপ ও চ্যাট অনুবাদ করুন",
     translateMeetupsChatsCopy: "ইভেন্টের বিস্তারিত ও চ্যাট বার্তা এই ভাষায় দেখান।",
     restartOnboarding: "SoftHello পরিচিতি আবার শুরু করুন",
@@ -498,7 +498,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Kun venners venner",
     friendsOfFriendsOnlyCopy: "Foretræk personer forbundet gennem dit betroede netværk.",
     appLanguage: "Appsprog",
-    appLanguageCopy: "Vælg sproget, der bruges i NSN.",
+    appLanguageCopy: "Vælg sproget, der bruges i SoftHello.",
     translateMeetupsChats: "Oversæt meetups og chats",
     translateMeetupsChatsCopy: "Vis eventdetaljer og chatbeskeder på dette sprog.",
   },
@@ -519,7 +519,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Alleen vrienden van vrienden",
     friendsOfFriendsOnlyCopy: "Geef voorkeur aan mensen uit je vertrouwde netwerk.",
     appLanguage: "App-taal",
-    appLanguageCopy: "Kies de taal die NSN gebruikt.",
+    appLanguageCopy: "Kies de taal die SoftHello gebruikt.",
     translateMeetupsChats: "Meetups en chats vertalen",
     translateMeetupsChatsCopy: "Toon eventdetails en chatberichten in deze taal.",
   },
@@ -540,7 +540,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Friends-of-friends lang",
     friendsOfFriendsOnlyCopy: "Unahin ang taong konektado sa trusted network mo.",
     appLanguage: "Wika ng app",
-    appLanguageCopy: "Piliin ang wikang gagamitin sa NSN.",
+    appLanguageCopy: "Piliin ang wikang gagamitin sa SoftHello.",
     translateMeetupsChats: "Isalin ang meetups at chats",
     translateMeetupsChatsCopy: "Ipakita ang event details at chat messages sa wikang ito.",
     restartOnboarding: "Simulan muli ang SoftHello onboarding",
@@ -566,7 +566,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Vain kavereiden kaverit",
     friendsOfFriendsOnlyCopy: "Suosi luotetun verkostosi kautta yhdistyviä ihmisiä.",
     appLanguage: "Sovelluksen kieli",
-    appLanguageCopy: "Valitse NSN:ssä käytettävä kieli.",
+    appLanguageCopy: "Valitse SoftHello:ssä käytettävä kieli.",
     translateMeetupsChats: "Käännä tapaamiset ja chatit",
     translateMeetupsChatsCopy: "Näytä tapahtumatiedot ja chat-viestit tällä kielellä.",
   },
@@ -587,7 +587,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Μόνο φίλοι φίλων",
     friendsOfFriendsOnlyCopy: "Προτιμήστε άτομα συνδεδεμένα με το αξιόπιστο δίκτυό σας.",
     appLanguage: "Γλώσσα εφαρμογής",
-    appLanguageCopy: "Επιλέξτε τη γλώσσα που χρησιμοποιείται στο NSN.",
+    appLanguageCopy: "Επιλέξτε τη γλώσσα που χρησιμοποιείται στο SoftHello.",
     translateMeetupsChats: "Μετάφραση meetups και chats",
     translateMeetupsChatsCopy: "Εμφάνιση λεπτομερειών εκδηλώσεων και μηνυμάτων σε αυτή τη γλώσσα.",
   },
@@ -608,7 +608,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Hanya teman dari teman",
     friendsOfFriendsOnlyCopy: "Prioritaskan orang yang terhubung melalui jaringan tepercaya Anda.",
     appLanguage: "Bahasa aplikasi",
-    appLanguageCopy: "Pilih bahasa yang digunakan di NSN.",
+    appLanguageCopy: "Pilih bahasa yang digunakan di SoftHello.",
     translateMeetupsChats: "Terjemahkan meetup dan chat",
     translateMeetupsChatsCopy: "Tampilkan detail event dan pesan chat dalam bahasa ini.",
     restartOnboarding: "Mulai ulang perkenalan SoftHello",
@@ -634,7 +634,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Rakan kepada rakan sahaja",
     friendsOfFriendsOnlyCopy: "Utamakan orang yang berkaitan melalui rangkaian dipercayai anda.",
     appLanguage: "Bahasa aplikasi",
-    appLanguageCopy: "Pilih bahasa yang digunakan dalam NSN.",
+    appLanguageCopy: "Pilih bahasa yang digunakan dalam SoftHello.",
     translateMeetupsChats: "Terjemah meetup dan chat",
     translateMeetupsChatsCopy: "Tunjukkan butiran acara dan mesej chat dalam bahasa ini.",
     restartOnboarding: "Mulakan semula pengenalan SoftHello",
@@ -660,7 +660,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Bare venners venner",
     friendsOfFriendsOnlyCopy: "Foretrekk personer koblet gjennom ditt betrodde nettverk.",
     appLanguage: "Appspråk",
-    appLanguageCopy: "Velg språket som brukes i NSN.",
+    appLanguageCopy: "Velg språket som brukes i SoftHello.",
     translateMeetupsChats: "Oversett meetups og chatter",
     translateMeetupsChatsCopy: "Vis arrangementsdetaljer og chatmeldinger på dette språket.",
   },
@@ -681,7 +681,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Tylko znajomi znajomych",
     friendsOfFriendsOnlyCopy: "Preferuj osoby połączone przez zaufaną sieć.",
     appLanguage: "Język aplikacji",
-    appLanguageCopy: "Wybierz język używany w NSN.",
+    appLanguageCopy: "Wybierz język używany w SoftHello.",
     translateMeetupsChats: "Tłumacz spotkania i czaty",
     translateMeetupsChatsCopy: "Pokazuj szczegóły wydarzeń i wiadomości w tym języku.",
   },
@@ -702,7 +702,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Apenas amigos de amigos",
     friendsOfFriendsOnlyCopy: "Prefira pessoas ligadas à sua rede de confiança.",
     appLanguage: "Idioma da app",
-    appLanguageCopy: "Escolha o idioma usado no NSN.",
+    appLanguageCopy: "Escolha o idioma usado no SoftHello.",
     translateMeetupsChats: "Traduzir encontros e chats",
     translateMeetupsChatsCopy: "Mostrar detalhes de eventos e mensagens neste idioma.",
   },
@@ -723,7 +723,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Doar prietenii prietenilor",
     friendsOfFriendsOnlyCopy: "Preferă persoane conectate prin rețeaua ta de încredere.",
     appLanguage: "Limba aplicației",
-    appLanguageCopy: "Alege limba folosită în NSN.",
+    appLanguageCopy: "Alege limba folosită în SoftHello.",
     translateMeetupsChats: "Tradu întâlniri și chaturi",
     translateMeetupsChatsCopy: "Arată detalii de eveniment și mesaje în această limbă.",
   },
@@ -744,7 +744,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Только друзья друзей",
     friendsOfFriendsOnlyCopy: "Предпочитайте людей из вашей доверенной сети.",
     appLanguage: "Язык приложения",
-    appLanguageCopy: "Выберите язык, используемый в NSN.",
+    appLanguageCopy: "Выберите язык, используемый в SoftHello.",
     translateMeetupsChats: "Переводить встречи и чаты",
     translateMeetupsChatsCopy: "Показывать детали событий и сообщения чата на этом языке.",
     restartOnboarding: "Перезапустить знакомство с SoftHello",
@@ -770,7 +770,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Endast vänners vänner",
     friendsOfFriendsOnlyCopy: "Föredra personer kopplade via ditt betrodda nätverk.",
     appLanguage: "Appspråk",
-    appLanguageCopy: "Välj språket som används i NSN.",
+    appLanguageCopy: "Välj språket som används i SoftHello.",
     translateMeetupsChats: "Översätt meetups och chattar",
     translateMeetupsChatsCopy: "Visa eventdetaljer och chattmeddelanden på detta språk.",
   },
@@ -791,7 +791,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "เฉพาะเพื่อนของเพื่อน",
     friendsOfFriendsOnlyCopy: "ให้ความสำคัญกับคนที่เชื่อมต่อผ่านเครือข่ายที่ไว้ใจได้",
     appLanguage: "ภาษาของแอป",
-    appLanguageCopy: "เลือกภาษาที่ใช้ใน NSN",
+    appLanguageCopy: "เลือกภาษาที่ใช้ใน SoftHello",
     translateMeetupsChats: "แปลมีตอัปและแชต",
     translateMeetupsChatsCopy: "แสดงรายละเอียดกิจกรรมและข้อความแชตในภาษานี้",
     restartOnboarding: "เริ่มแนะนำ SoftHello ใหม่",
@@ -817,7 +817,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Yalnızca arkadaşların arkadaşları",
     friendsOfFriendsOnlyCopy: "Güvenilir ağınız üzerinden bağlı kişileri tercih edin.",
     appLanguage: "Uygulama dili",
-    appLanguageCopy: "NSN'de kullanılacak dili seçin.",
+    appLanguageCopy: "SoftHello'de kullanılacak dili seçin.",
     translateMeetupsChats: "Meetup ve sohbetleri çevir",
     translateMeetupsChatsCopy: "Etkinlik ayrıntılarını ve sohbet mesajlarını bu dilde gösterin.",
     restartOnboarding: "SoftHello başlangıcını yeniden başlat",
@@ -843,7 +843,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Лише друзі друзів",
     friendsOfFriendsOnlyCopy: "Віддавайте перевагу людям із вашої довіреної мережі.",
     appLanguage: "Мова застосунку",
-    appLanguageCopy: "Оберіть мову, яка використовується в NSN.",
+    appLanguageCopy: "Оберіть мову, яка використовується в SoftHello.",
     translateMeetupsChats: "Перекладати зустрічі та чати",
     translateMeetupsChatsCopy: "Показувати деталі подій і повідомлення цією мовою.",
   },
@@ -864,7 +864,7 @@ const settingsTranslations: Record<string, SettingsCopy> = {
     friendsOfFriendsOnly: "Chỉ bạn của bạn bè",
     friendsOfFriendsOnlyCopy: "Ưu tiên người được kết nối qua mạng lưới đáng tin cậy.",
     appLanguage: "Ngôn ngữ ứng dụng",
-    appLanguageCopy: "Chọn ngôn ngữ dùng trong NSN.",
+    appLanguageCopy: "Chọn ngôn ngữ dùng trong SoftHello.",
     translateMeetupsChats: "Dịch meetup và chat",
     translateMeetupsChatsCopy: "Hiển thị chi tiết sự kiện và tin nhắn bằng ngôn ngữ này.",
     restartOnboarding: "Bắt đầu lại phần giới thiệu SoftHello",
@@ -893,7 +893,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Net vriende van vriende",
     friendsOfFriendsOnlyCopy: "Verkies mense wat deur jou vertroude netwerk verbind is.",
     appLanguage: "Toepassingstaal",
-    appLanguageCopy: "Kies die taal wat NSN gebruik.",
+    appLanguageCopy: "Kies die taal wat SoftHello gebruik.",
     translateMeetupsChats: "Vertaal ontmoetings en geselsies",
     translateMeetupsChatsCopy: "Wys geleentheidbesonderhede en boodskappe in hierdie taal.",
     appearance: "Voorkoms",
@@ -924,7 +924,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Vetëm miq të miqve",
     friendsOfFriendsOnlyCopy: "Prefero njerëz të lidhur përmes rrjetit tënd të besuar.",
     appLanguage: "Gjuha e aplikacionit",
-    appLanguageCopy: "Zgjidh gjuhën që përdoret në NSN.",
+    appLanguageCopy: "Zgjidh gjuhën që përdoret në SoftHello.",
     translateMeetupsChats: "Përkthe takimet dhe bisedat",
     translateMeetupsChatsCopy: "Shfaq detajet e eventeve dhe mesazhet në këtë gjuhë.",
     appearance: "Pamja",
@@ -955,7 +955,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Միայն ընկերների ընկերներ",
     friendsOfFriendsOnlyCopy: "Նախընտրեք մարդկանց, որոնք կապված են ձեր վստահելի ցանցով։",
     appLanguage: "Հավելվածի լեզու",
-    appLanguageCopy: "Ընտրեք NSN-ում օգտագործվող լեզուն։",
+    appLanguageCopy: "Ընտրեք SoftHello-ում օգտագործվող լեզուն։",
     translateMeetupsChats: "Թարգմանել հանդիպումները և զրույցները",
     translateMeetupsChatsCopy: "Ցույց տալ միջոցառման մանրամասները և հաղորդագրությունները այս լեզվով։",
     appearance: "Տեսք",
@@ -986,7 +986,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Samo prijatelji prijatelja",
     friendsOfFriendsOnlyCopy: "Preferiraj ljude povezane kroz tvoju pouzdanu mrežu.",
     appLanguage: "Jezik aplikacije",
-    appLanguageCopy: "Odaberi jezik koji NSN koristi.",
+    appLanguageCopy: "Odaberi jezik koji SoftHello koristi.",
     translateMeetupsChats: "Prevedi susrete i chatove",
     translateMeetupsChatsCopy: "Prikaži detalje događaja i poruke na ovom jeziku.",
     appearance: "Izgled",
@@ -1017,7 +1017,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Jen přátelé přátel",
     friendsOfFriendsOnlyCopy: "Preferujte lidi propojené přes vaši důvěryhodnou síť.",
     appLanguage: "Jazyk aplikace",
-    appLanguageCopy: "Vyberte jazyk používaný v NSN.",
+    appLanguageCopy: "Vyberte jazyk používaný v SoftHello.",
     translateMeetupsChats: "Překládat setkání a chaty",
     translateMeetupsChatsCopy: "Zobrazovat detaily událostí a zprávy v tomto jazyce.",
     appearance: "Vzhled",
@@ -1048,7 +1048,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Ainult sõprade sõbrad",
     friendsOfFriendsOnlyCopy: "Eelista inimesi, kes on seotud sinu usaldusvõrgustiku kaudu.",
     appLanguage: "Rakenduse keel",
-    appLanguageCopy: "Vali keel, mida NSN kasutab.",
+    appLanguageCopy: "Vali keel, mida SoftHello kasutab.",
     translateMeetupsChats: "Tõlgi kohtumised ja vestlused",
     translateMeetupsChatsCopy: "Kuva sündmuse üksikasjad ja sõnumid selles keeles.",
     appearance: "Välimus",
@@ -1079,7 +1079,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Csak barátok barátai",
     friendsOfFriendsOnlyCopy: "Részesítsd előnyben a megbízható hálózatodon keresztül kapcsolódó embereket.",
     appLanguage: "Alkalmazás nyelve",
-    appLanguageCopy: "Válaszd ki az NSN-ben használt nyelvet.",
+    appLanguageCopy: "Válaszd ki az SoftHello-ben használt nyelvet.",
     translateMeetupsChats: "Találkozók és chatek fordítása",
     translateMeetupsChatsCopy: "Eseményrészletek és üzenetek megjelenítése ezen a nyelven.",
     appearance: "Megjelenés",
@@ -1119,7 +1119,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Sèlman zanmi zanmi",
     friendsOfFriendsOnlyCopy: "Prefere moun ki konekte atravè rezo ou fè konfyans.",
     appLanguage: "Lang aplikasyon an",
-    appLanguageCopy: "Chwazi lang NSN itilize a.",
+    appLanguageCopy: "Chwazi lang SoftHello itilize a.",
     translateMeetupsChats: "Tradui rankont ak chat",
     translateMeetupsChatsCopy: "Montre detay evènman ak mesaj nan lang sa a.",
     appearance: "Aparans",
@@ -1167,7 +1167,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Tikai draugu draugi",
     friendsOfFriendsOnlyCopy: "Dod priekšroku cilvēkiem, kas saistīti caur uzticamu tīklu.",
     appLanguage: "Lietotnes valoda",
-    appLanguageCopy: "Izvēlies valodu, ko izmanto NSN.",
+    appLanguageCopy: "Izvēlies valodu, ko izmanto SoftHello.",
     translateMeetupsChats: "Tulkot tikšanās un tērzēšanu",
     translateMeetupsChatsCopy: "Rādi pasākumu informāciju un ziņojumus šajā valodā.",
     appearance: "Izskats",
@@ -1198,7 +1198,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Tik draugų draugai",
     friendsOfFriendsOnlyCopy: "Pirmenybę teik žmonėms iš patikimo tinklo.",
     appLanguage: "Programėlės kalba",
-    appLanguageCopy: "Pasirink NSN naudojamą kalbą.",
+    appLanguageCopy: "Pasirink SoftHello naudojamą kalbą.",
     translateMeetupsChats: "Versti susitikimus ir pokalbius",
     translateMeetupsChatsCopy: "Rodyti renginių informaciją ir žinutes šia kalba.",
     appearance: "Išvaizda",
@@ -1229,7 +1229,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Nëmmen Frënn vu Frënn",
     friendsOfFriendsOnlyCopy: "Bevirdeelegt Leit, déi iwwer däi vertraut Netzwierk verbonne sinn.",
     appLanguage: "App-Sprooch",
-    appLanguageCopy: "Wiel d'Sprooch, déi NSN benotzt.",
+    appLanguageCopy: "Wiel d'Sprooch, déi SoftHello benotzt.",
     translateMeetupsChats: "Meetups a Chatten iwwersetzen",
     translateMeetupsChatsCopy: "Weis Eventdetailer a Messagen an dëser Sprooch.",
     appearance: "Ausgesinn",
@@ -1260,7 +1260,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "Iba priatelia priateľov",
     friendsOfFriendsOnlyCopy: "Preferujte ľudí prepojených cez vašu dôveryhodnú sieť.",
     appLanguage: "Jazyk aplikácie",
-    appLanguageCopy: "Vyberte jazyk používaný v NSN.",
+    appLanguageCopy: "Vyberte jazyk používaný v SoftHello.",
     translateMeetupsChats: "Prekladať stretnutia a chaty",
     translateMeetupsChatsCopy: "Zobrazovať detaily udalostí a správy v tomto jazyku.",
     appearance: "Vzhľad",
@@ -1300,7 +1300,7 @@ const supplementalSettingsTranslations: Record<string, Partial<SettingsCopy>> = 
     friendsOfFriendsOnly: "בלויז חברים פון חברים",
     friendsOfFriendsOnlyCopy: "גיב עדיפות צו מענטשן פארבונדן דורך דיין צוטרוי-נעץ.",
     appLanguage: "שפראך פון דער אפ",
-    appLanguageCopy: "קלייב די שפראך וואס NSN ניצט.",
+    appLanguageCopy: "קלייב די שפראך וואס SoftHello ניצט.",
     translateMeetupsChats: "איבערזעצן מיטאפס און שמועסן",
     translateMeetupsChatsCopy: "ווייז געשעעניש-פרטים און מעסעדזשעס אין דער שפראך.",
     appearance: "אויסזען",
@@ -2086,308 +2086,308 @@ const settingsSectionTranslations: Record<string, Partial<SettingsCopy>> = {
 
 const paletteTranslations: Record<string, Record<string, { label: string; description: string }>> = {
   Arabic: {
-    midnight: { label: "منتصف الليل NSN", description: "كحلي عميق مع لمسات نيلي وفيروزية." },
+    midnight: { label: "منتصف الليل SoftHello", description: "كحلي عميق مع لمسات نيلي وفيروزية." },
     ocean: { label: "هدوء المحيط", description: "درجات الأزرق والأكوا والسماء الناعمة." },
     forest: { label: "غابة اجتماعية", description: "أسطح خضراء دائمة مع لمسات دافئة وودودة." },
     sunset: { label: "غروب دافئ", description: "لمسات مرجانية وذهبية لمزاج أكثر نعومة." },
     lavender: { label: "لافندر هادئ", description: "لمسات بنفسجية ناعمة لشعور اجتماعي أهدأ." },
   },
   Chinese: {
-    midnight: { label: "午夜 NSN", description: "深海军蓝，搭配靛蓝和青绿色强调色。" },
+    midnight: { label: "午夜 SoftHello", description: "深海军蓝，搭配靛蓝和青绿色强调色。" },
     ocean: { label: "海洋平静", description: "蓝色、水色和柔和天空色。" },
     forest: { label: "森林社交", description: "常青色界面，带温暖友好的高亮。" },
     sunset: { label: "温暖日落", description: "珊瑚色和金色强调，带来更柔和的心情。" },
     lavender: { label: "安静薰衣草", description: "柔和紫色强调，营造更平静的社交感。" },
   },
   French: {
-    midnight: { label: "Minuit NSN", description: "Bleu nuit profond avec accents indigo et turquoise." },
+    midnight: { label: "Minuit SoftHello", description: "Bleu nuit profond avec accents indigo et turquoise." },
     ocean: { label: "Calme océan", description: "Bleu, aqua et tons doux de ciel." },
     forest: { label: "Forêt sociale", description: "Surfaces vert forêt avec touches chaleureuses." },
     sunset: { label: "Coucher chaud", description: "Accents corail et or pour une humeur plus douce." },
     lavender: { label: "Lavande calme", description: "Accents violets doux pour une sensation sociale plus calme." },
   },
   German: {
-    midnight: { label: "Mitternacht NSN", description: "Tiefes Marineblau mit Indigo- und Türkisakzenten." },
+    midnight: { label: "Mitternacht SoftHello", description: "Tiefes Marineblau mit Indigo- und Türkisakzenten." },
     ocean: { label: "Ozeanruhe", description: "Blau-, Aqua- und weiche Himmelstöne." },
     forest: { label: "Sozialer Wald", description: "Immergrüne Flächen mit warmen freundlichen Highlights." },
     sunset: { label: "Warmer Sonnenuntergang", description: "Koralle und Gold für eine weichere Stimmung." },
     lavender: { label: "Ruhiger Lavendel", description: "Weiche violette Akzente für ein ruhigeres soziales Gefühl." },
   },
   Hebrew: {
-    midnight: { label: "חצות NSN", description: "כחול עמוק עם הדגשות אינדיגו וטורקיז." },
+    midnight: { label: "חצות SoftHello", description: "כחול עמוק עם הדגשות אינדיגו וטורקיז." },
     ocean: { label: "רוגע אוקיינוס", description: "כחול, אקווה וגווני שמיים רכים." },
     forest: { label: "יער חברתי", description: "משטחי ירוק-עד עם הדגשות חמימות וידידותיות." },
     sunset: { label: "שקיעה חמימה", description: "הדגשות קורל וזהב לאווירה רכה יותר." },
     lavender: { label: "לבנדר שקט", description: "הדגשות סגולות רכות לתחושה חברתית רגועה יותר." },
   },
   Hindi: {
-    midnight: { label: "मिडनाइट NSN", description: "इंडिगो और टील ऐक्सेंट के साथ गहरा नेवी।" },
+    midnight: { label: "मिडनाइट SoftHello", description: "इंडिगो और टील ऐक्सेंट के साथ गहरा नेवी।" },
     ocean: { label: "ओशन calm", description: "नीले, एक्वा और नरम आसमानी रंग।" },
     forest: { label: "फॉरेस्ट सोशल", description: "गरम दोस्ताना हाइलाइट्स के साथ एवरग्रीन सतहें।" },
     sunset: { label: "सनसेट वार्म", description: "नरम मूड के लिए कोरल और गोल्ड ऐक्सेंट।" },
     lavender: { label: "लैवेंडर quiet", description: "शांत सामाजिक एहसास के लिए नरम बैंगनी ऐक्सेंट।" },
   },
   Italian: {
-    midnight: { label: "Mezzanotte NSN", description: "Blu navy profondo con accenti indaco e teal." },
+    midnight: { label: "Mezzanotte SoftHello", description: "Blu navy profondo con accenti indaco e teal." },
     ocean: { label: "Calma oceano", description: "Toni blu, acqua e cielo morbido." },
     forest: { label: "Foresta sociale", description: "Superfici sempreverdi con accenti caldi e amichevoli." },
     sunset: { label: "Tramonto caldo", description: "Accenti corallo e oro per un mood più morbido." },
     lavender: { label: "Lavanda quieta", description: "Accenti viola morbidi per una sensazione sociale più calma." },
   },
   Japanese: {
-    midnight: { label: "ミッドナイト NSN", description: "深いネイビーにインディゴとティールのアクセント。" },
+    midnight: { label: "ミッドナイト SoftHello", description: "深いネイビーにインディゴとティールのアクセント。" },
     ocean: { label: "オーシャン Calm", description: "ブルー、アクア、やわらかな空色のトーン。" },
     forest: { label: "フォレスト Social", description: "常緑の面に温かく親しみやすいハイライト。" },
     sunset: { label: "サンセット Warm", description: "やわらかな気分のためのコーラルとゴールドのアクセント。" },
     lavender: { label: "ラベンダー Quiet", description: "より落ち着いた社交感のための淡い紫のアクセント。" },
   },
   Korean: {
-    midnight: { label: "미드나이트 NSN", description: "인디고와 틸 포인트가 있는 깊은 네이비." },
+    midnight: { label: "미드나이트 SoftHello", description: "인디고와 틸 포인트가 있는 깊은 네이비." },
     ocean: { label: "오션 Calm", description: "블루, 아쿠아, 부드러운 하늘색 톤." },
     forest: { label: "포레스트 Social", description: "따뜻하고 친근한 포인트가 있는 에버그린 표면." },
     sunset: { label: "선셋 Warm", description: "부드러운 분위기의 코랄과 골드 포인트." },
     lavender: { label: "라벤더 Quiet", description: "더 차분한 사회적 느낌을 위한 부드러운 보라 포인트." },
   },
   Persian: {
-    midnight: { label: "نیمه‌شب NSN", description: "سرمه‌ای عمیق با لمسه‌های نیلی و فیروزه‌ای." },
+    midnight: { label: "نیمه‌شب SoftHello", description: "سرمه‌ای عمیق با لمسه‌های نیلی و فیروزه‌ای." },
     ocean: { label: "آرامش اقیانوس", description: "رنگ‌های آبی، آکوا و آسمانی نرم." },
     forest: { label: "جنگل اجتماعی", description: "سطح‌های سبز همیشه‌بهار با برجسته‌های گرم و دوستانه." },
     sunset: { label: "غروب گرم", description: "لمسه‌های مرجانی و طلایی برای حال‌وهوایی نرم‌تر." },
     lavender: { label: "اسطوخودوس آرام", description: "لمسه‌های بنفش نرم برای حس اجتماعی آرام‌تر." },
   },
   Urdu: {
-    midnight: { label: "نصف شب NSN", description: "انڈیگو اور ٹیل جھلکوں کے ساتھ گہرا نیوی۔" },
+    midnight: { label: "نصف شب SoftHello", description: "انڈیگو اور ٹیل جھلکوں کے ساتھ گہرا نیوی۔" },
     ocean: { label: "سمندری سکون", description: "نیلے، ایکوا اور نرم آسمانی رنگ۔" },
     forest: { label: "سماجی جنگل", description: "گرم دوستانہ جھلکوں کے ساتھ evergreen سطحیں۔" },
     sunset: { label: "گرم غروب", description: "نرم مزاج کے لیے کورل اور سنہری جھلکیں۔" },
     lavender: { label: "پرسکون لیونڈر", description: "زیادہ پرسکون سماجی احساس کے لیے نرم جامنی جھلکیں۔" },
   },
   Bengali: {
-    midnight: { label: "মিডনাইট NSN", description: "ইন্ডিগো ও টিল অ্যাকসেন্টসহ গভীর নেভি।" },
+    midnight: { label: "মিডনাইট SoftHello", description: "ইন্ডিগো ও টিল অ্যাকসেন্টসহ গভীর নেভি।" },
     ocean: { label: "ওশান শান্তি", description: "নীল, অ্যাকোয়া ও নরম আকাশি টোন।" },
     forest: { label: "সামাজিক বন", description: "উষ্ণ বন্ধুত্বপূর্ণ হাইলাইটসহ চিরসবুজ পৃষ্ঠ।" },
     sunset: { label: "উষ্ণ সূর্যাস্ত", description: "নরম মুডের জন্য কোরাল ও সোনালি অ্যাকসেন্ট।" },
     lavender: { label: "শান্ত ল্যাভেন্ডার", description: "আরও শান্ত সামাজিক অনুভূতির জন্য নরম বেগুনি অ্যাকসেন্ট।" },
   },
   Filipino: {
-    midnight: { label: "Midnight NSN", description: "Malalim na navy na may indigo at teal accents." },
+    midnight: { label: "Midnight SoftHello", description: "Malalim na navy na may indigo at teal accents." },
     ocean: { label: "Ocean Calm", description: "Blue, aqua at malambot na sky tones." },
     forest: { label: "Forest Social", description: "Evergreen surfaces na may mainit at friendly highlights." },
     sunset: { label: "Sunset Warm", description: "Coral at gold accents para sa mas banayad na mood." },
     lavender: { label: "Lavender Quiet", description: "Malambot na purple accents para sa mas kalmadong social feel." },
   },
   Indonesian: {
-    midnight: { label: "Midnight NSN", description: "Navy gelap dengan aksen indigo dan teal." },
+    midnight: { label: "Midnight SoftHello", description: "Navy gelap dengan aksen indigo dan teal." },
     ocean: { label: "Ocean Calm", description: "Nuansa biru, aqua, dan langit lembut." },
     forest: { label: "Forest Social", description: "Permukaan hijau abadi dengan sorotan hangat dan ramah." },
     sunset: { label: "Sunset Warm", description: "Aksen koral dan emas untuk suasana yang lebih lembut." },
     lavender: { label: "Lavender Quiet", description: "Aksen ungu lembut untuk rasa sosial yang lebih tenang." },
   },
   Malay: {
-    midnight: { label: "Midnight NSN", description: "Biru navy gelap dengan aksen indigo dan teal." },
+    midnight: { label: "Midnight SoftHello", description: "Biru navy gelap dengan aksen indigo dan teal." },
     ocean: { label: "Ocean Calm", description: "Nada biru, aqua dan langit lembut." },
     forest: { label: "Forest Social", description: "Permukaan hijau dengan sorotan hangat dan mesra." },
     sunset: { label: "Sunset Warm", description: "Aksen karang dan emas untuk suasana lebih lembut." },
     lavender: { label: "Lavender Quiet", description: "Aksen ungu lembut untuk rasa sosial yang lebih tenang." },
   },
   Thai: {
-    midnight: { label: "Midnight NSN", description: "น้ำเงินเข้มพร้อมสีเน้นอินดิโกและทีล" },
+    midnight: { label: "Midnight SoftHello", description: "น้ำเงินเข้มพร้อมสีเน้นอินดิโกและทีล" },
     ocean: { label: "Ocean Calm", description: "โทนฟ้า อะควา และสีท้องฟ้านุ่มๆ" },
     forest: { label: "Forest Social", description: "พื้นผิวเขียวเข้มพร้อมไฮไลต์อบอุ่นและเป็นมิตร" },
     sunset: { label: "Sunset Warm", description: "สีเน้นคอรัลและทองเพื่ออารมณ์ที่นุ่มขึ้น" },
     lavender: { label: "Lavender Quiet", description: "สีม่วงนุ่มๆ สำหรับความรู้สึกทางสังคมที่สงบขึ้น" },
   },
   Turkish: {
-    midnight: { label: "Gece Yarısı NSN", description: "İndigo ve teal vurgulu derin lacivert." },
+    midnight: { label: "Gece Yarısı SoftHello", description: "İndigo ve teal vurgulu derin lacivert." },
     ocean: { label: "Okyanus Sakinliği", description: "Mavi, aqua ve yumuşak gökyüzü tonları." },
     forest: { label: "Sosyal Orman", description: "Sıcak ve dostça vurgularla yaprak dökmeyen yüzeyler." },
     sunset: { label: "Sıcak Gün Batımı", description: "Daha yumuşak bir ruh hali için mercan ve altın vurgular." },
     lavender: { label: "Sakin Lavanta", description: "Daha sakin bir sosyal his için yumuşak mor vurgular." },
   },
   Vietnamese: {
-    midnight: { label: "Midnight NSN", description: "Xanh navy sâu với điểm nhấn chàm và teal." },
+    midnight: { label: "Midnight SoftHello", description: "Xanh navy sâu với điểm nhấn chàm và teal." },
     ocean: { label: "Ocean Calm", description: "Tông xanh, aqua và màu trời dịu." },
     forest: { label: "Forest Social", description: "Bề mặt xanh lá với điểm nhấn ấm áp và thân thiện." },
     sunset: { label: "Sunset Warm", description: "Điểm nhấn san hô và vàng cho tâm trạng mềm hơn." },
     lavender: { label: "Lavender Quiet", description: "Điểm nhấn tím dịu cho cảm giác xã hội bình tĩnh hơn." },
   },
   Russian: {
-    midnight: { label: "Полночь NSN", description: "Глубокий тёмно-синий с индиго и бирюзовыми акцентами." },
+    midnight: { label: "Полночь SoftHello", description: "Глубокий тёмно-синий с индиго и бирюзовыми акцентами." },
     ocean: { label: "Океанское спокойствие", description: "Синие, аква и мягкие небесные тона." },
     forest: { label: "Лесное общение", description: "Вечнозелёные поверхности с тёплыми дружелюбными акцентами." },
     sunset: { label: "Тёплый закат", description: "Коралловые и золотые акценты для более мягкого настроения." },
     lavender: { label: "Тихая лаванда", description: "Мягкие фиолетовые акценты для более спокойного общения." },
   },
   Spanish: {
-    midnight: { label: "Medianoche NSN", description: "Azul marino profundo con acentos índigo y turquesa." },
+    midnight: { label: "Medianoche SoftHello", description: "Azul marino profundo con acentos índigo y turquesa." },
     ocean: { label: "Calma océano", description: "Tonos azules, aqua y cielo suave." },
     forest: { label: "Bosque social", description: "Superficies verdes con detalles cálidos y amables." },
     sunset: { label: "Atardecer cálido", description: "Acentos coral y dorado para un ánimo más suave." },
     lavender: { label: "Lavanda tranquila", description: "Acentos morados suaves para una sensación social más calmada." },
   },
   Afrikaans: {
-    midnight: { label: "Middernag NSN", description: "Diep vlootblou met indigo- en tealkleur-aksente." },
+    midnight: { label: "Middernag SoftHello", description: "Diep vlootblou met indigo- en tealkleur-aksente." },
     ocean: { label: "Oseaan-kalmte", description: "Blou, aqua en sagte lugtone." },
     forest: { label: "Sosiale woud", description: "Immergroen oppervlaktes met warm, vriendelike hoogtepunte." },
     sunset: { label: "Warm sonsondergang", description: "Koraal- en goudaksente vir 'n sagter stemming." },
     lavender: { label: "Stil laventel", description: "Sagte pers aksente vir 'n rustiger sosiale gevoel." },
   },
   Albanian: {
-    midnight: { label: "Mesnatë NSN", description: "Blu e errët me thekse indigo dhe teal." },
+    midnight: { label: "Mesnatë SoftHello", description: "Blu e errët me thekse indigo dhe teal." },
     ocean: { label: "Qetësi oqeani", description: "Tone blu, aqua dhe qielli të butë." },
     forest: { label: "Pyll social", description: "Sipërfaqe të gjelbra me thekse të ngrohta e miqësore." },
     sunset: { label: "Perëndim i ngrohtë", description: "Thekse korali dhe ari për një humor më të butë." },
     lavender: { label: "Livando e qetë", description: "Thekse vjollce të buta për një ndjesi sociale më të qetë." },
   },
   Armenian: {
-    midnight: { label: "Կեսգիշեր NSN", description: "Խորը մուգ կապույտ՝ ինդիգո և թիլ շեշտերով։" },
+    midnight: { label: "Կեսգիշեր SoftHello", description: "Խորը մուգ կապույտ՝ ինդիգո և թիլ շեշտերով։" },
     ocean: { label: "Օվկիանոսի հանգստություն", description: "Կապույտ, ակվա և մեղմ երկնագույն երանգներ։" },
     forest: { label: "Սոցիալական անտառ", description: "Մշտադալար մակերեսներ՝ ջերմ և ընկերական շեշտերով։" },
     sunset: { label: "Ջերմ մայրամուտ", description: "Կորալային և ոսկեգույն շեշտեր՝ ավելի մեղմ տրամադրության համար։" },
     lavender: { label: "Հանգիստ նարդոս", description: "Մեղմ մանուշակագույն շեշտեր՝ ավելի հանգիստ սոցիալական զգացողության համար։" },
   },
   Croatian: {
-    midnight: { label: "Ponoćni NSN", description: "Duboka mornarsko plava s indigo i teal naglascima." },
+    midnight: { label: "Ponoćni SoftHello", description: "Duboka mornarsko plava s indigo i teal naglascima." },
     ocean: { label: "Oceanska smirenost", description: "Plavi, aqua i nježni nebeski tonovi." },
     forest: { label: "Društvena šuma", description: "Zimzelene površine s toplim i prijateljskim naglascima." },
     sunset: { label: "Topli zalazak", description: "Koraljni i zlatni naglasci za mekše raspoloženje." },
     lavender: { label: "Mirna lavanda", description: "Nježni ljubičasti naglasci za mirniji društveni osjećaj." },
   },
   Czech: {
-    midnight: { label: "Půlnoční NSN", description: "Hluboká námořnická modř s indigovými a tyrkysovými akcenty." },
+    midnight: { label: "Půlnoční SoftHello", description: "Hluboká námořnická modř s indigovými a tyrkysovými akcenty." },
     ocean: { label: "Oceánský klid", description: "Modré, akvamarínové a jemné nebeské tóny." },
     forest: { label: "Sociální les", description: "Stálezelené plochy s teplými a přátelskými akcenty." },
     sunset: { label: "Teplý západ", description: "Korálové a zlaté akcenty pro jemnější náladu." },
     lavender: { label: "Tichá levandule", description: "Jemné fialové akcenty pro klidnější společenský pocit." },
   },
   Danish: {
-    midnight: { label: "Midnat NSN", description: "Dyb marineblå med indigo- og teal-accenter." },
+    midnight: { label: "Midnat SoftHello", description: "Dyb marineblå med indigo- og teal-accenter." },
     ocean: { label: "Havro", description: "Blå, aqua og bløde himmeltoner." },
     forest: { label: "Social skov", description: "Stedsegrønne flader med varme, venlige highlights." },
     sunset: { label: "Varm solnedgang", description: "Koral- og guldaccenter for en blødere stemning." },
     lavender: { label: "Rolig lavendel", description: "Bløde lilla accenter for en roligere social følelse." },
   },
   Dutch: {
-    midnight: { label: "Middernacht NSN", description: "Diep marineblauw met indigo- en tealaccenten." },
+    midnight: { label: "Middernacht SoftHello", description: "Diep marineblauw met indigo- en tealaccenten." },
     ocean: { label: "Oceaankalmte", description: "Blauwe, aqua en zachte luchttinten." },
     forest: { label: "Sociaal bos", description: "Groene oppervlakken met warme, vriendelijke accenten." },
     sunset: { label: "Warme zonsondergang", description: "Koraal- en goudaccenten voor een zachtere stemming." },
     lavender: { label: "Rustige lavendel", description: "Zachte paarse accenten voor een kalmer sociaal gevoel." },
   },
   English: {
-    midnight: { label: "Midnight NSN", description: "Deep navy with indigo and teal accents." },
+    midnight: { label: "Midnight SoftHello", description: "Deep navy with indigo and teal accents." },
     ocean: { label: "Ocean Calm", description: "Blue, aqua, and soft sky tones." },
     forest: { label: "Forest Social", description: "Evergreen surfaces with warm friendly highlights." },
     sunset: { label: "Sunset Warm", description: "Warm coral and gold accents for a softer mood." },
     lavender: { label: "Lavender Quiet", description: "Soft purple accents for a calmer social feel." },
   },
   Estonian: {
-    midnight: { label: "Kesköö NSN", description: "Sügav tumesinine indigo ja teal-aktsentidega." },
+    midnight: { label: "Kesköö SoftHello", description: "Sügav tumesinine indigo ja teal-aktsentidega." },
     ocean: { label: "Ookeani rahu", description: "Sinised, aqua ja pehmed taeva toonid." },
     forest: { label: "Sotsiaalne mets", description: "Igihaljad pinnad soojade ja sõbralike rõhutustega." },
     sunset: { label: "Soe päikeseloojang", description: "Koralli ja kulla aktsendid pehmema meeleolu jaoks." },
     lavender: { label: "Vaikne lavendel", description: "Pehmed lillad aktsendid rahulikuma sotsiaalse tunde jaoks." },
   },
   Finnish: {
-    midnight: { label: "Keskiyö NSN", description: "Syvä laivastonsininen indigo- ja teal-korostuksilla." },
+    midnight: { label: "Keskiyö SoftHello", description: "Syvä laivastonsininen indigo- ja teal-korostuksilla." },
     ocean: { label: "Meren rauha", description: "Sinisiä, aqua- ja pehmeitä taivaan sävyjä." },
     forest: { label: "Sosiaalinen metsä", description: "Ikivihreitä pintoja lämpimillä ja ystävällisillä korostuksilla." },
     sunset: { label: "Lämmin auringonlasku", description: "Koralli- ja kultakorostuksia pehmeämpään tunnelmaan." },
     lavender: { label: "Rauhallinen laventeli", description: "Pehmeitä violetteja korostuksia rauhallisempaan sosiaaliseen tunteeseen." },
   },
   Greek: {
-    midnight: { label: "Μεσάνυχτα NSN", description: "Βαθύ ναυτικό μπλε με indigo και teal τόνους." },
+    midnight: { label: "Μεσάνυχτα SoftHello", description: "Βαθύ ναυτικό μπλε με indigo και teal τόνους." },
     ocean: { label: "Ηρεμία ωκεανού", description: "Μπλε, aqua και απαλοί ουράνιοι τόνοι." },
     forest: { label: "Κοινωνικό δάσος", description: "Αειθαλή επίπεδα με ζεστές και φιλικές πινελιές." },
     sunset: { label: "Ζεστό ηλιοβασίλεμα", description: "Κοραλλί και χρυσές πινελιές για πιο απαλή διάθεση." },
     lavender: { label: "Ήρεμη λεβάντα", description: "Απαλοί μωβ τόνοι για πιο ήρεμη κοινωνική αίσθηση." },
   },
   "Haitian Creole": {
-    midnight: { label: "Minwi NSN", description: "Ble maren fon ak aksan endigo ak teal." },
+    midnight: { label: "Minwi SoftHello", description: "Ble maren fon ak aksan endigo ak teal." },
     ocean: { label: "Kalm oseyan", description: "Ton ble, aqua ak syèl dou." },
     forest: { label: "Forè sosyal", description: "Sifas vèt ak aksan cho, zanmitay." },
     sunset: { label: "Kouche solèy cho", description: "Aksan koray ak lò pou yon atitid pi dou." },
     lavender: { label: "Lavand trankil", description: "Aksan mov dou pou yon santiman sosyal pi kalm." },
   },
   Hungarian: {
-    midnight: { label: "Éjféli NSN", description: "Mély tengerészkék indigó és türkiz hangsúlyokkal." },
+    midnight: { label: "Éjféli SoftHello", description: "Mély tengerészkék indigó és türkiz hangsúlyokkal." },
     ocean: { label: "Óceáni nyugalom", description: "Kék, aqua és lágy égbolt tónusok." },
     forest: { label: "Közösségi erdő", description: "Örökzöld felületek meleg, barátságos kiemelésekkel." },
     sunset: { label: "Meleg naplemente", description: "Korall és arany hangsúlyok egy lágyabb hangulathoz." },
     lavender: { label: "Csendes levendula", description: "Lágy lila hangsúlyok egy nyugodtabb közösségi érzéshez." },
   },
   Latvian: {
-    midnight: { label: "Pusnakts NSN", description: "Dziļi tumši zils ar indigo un tirkīza akcentiem." },
+    midnight: { label: "Pusnakts SoftHello", description: "Dziļi tumši zils ar indigo un tirkīza akcentiem." },
     ocean: { label: "Okeāna miers", description: "Zili, akva un maigi debesu toņi." },
     forest: { label: "Sociālais mežs", description: "Mūžzaļas virsmas ar siltiem un draudzīgiem akcentiem." },
     sunset: { label: "Silts saulriets", description: "Koraļļu un zelta akcenti maigākai noskaņai." },
     lavender: { label: "Klusa lavanda", description: "Maigi violeti akcenti mierīgākai sociālajai sajūtai." },
   },
   Lithuanian: {
-    midnight: { label: "Vidurnakčio NSN", description: "Gili tamsiai mėlyna su indigo ir teal akcentais." },
+    midnight: { label: "Vidurnakčio SoftHello", description: "Gili tamsiai mėlyna su indigo ir teal akcentais." },
     ocean: { label: "Vandenyno ramybė", description: "Mėlyni, aqua ir švelnūs dangaus tonai." },
     forest: { label: "Socialinis miškas", description: "Visžalės plokštumos su šiltais ir draugiškais akcentais." },
     sunset: { label: "Šiltas saulėlydis", description: "Koralų ir aukso akcentai švelnesnei nuotaikai." },
     lavender: { label: "Rami levanda", description: "Švelnūs violetiniai akcentai ramesniam socialiniam jausmui." },
   },
   Luxembourgish: {
-    midnight: { label: "Mëtternuecht NSN", description: "Déift Marineblo mat Indigo- an Teal-Akzenter." },
+    midnight: { label: "Mëtternuecht SoftHello", description: "Déift Marineblo mat Indigo- an Teal-Akzenter." },
     ocean: { label: "Ozeanrou", description: "Blo, Aqua a mëll Himmelstéin." },
     forest: { label: "Soziale Bësch", description: "Immergréng Flächen mat waarmen a frëndlechen Akzenter." },
     sunset: { label: "Waarme Sonnenënnergang", description: "Korall- a Goldakzenter fir eng méi mëll Stëmmung." },
     lavender: { label: "Rouege Lavendel", description: "Mëll violett Akzenter fir e méi rouegt soziaalt Gefill." },
   },
   Norwegian: {
-    midnight: { label: "Midnatt NSN", description: "Dyp marineblå med indigo- og tealaksenter." },
+    midnight: { label: "Midnatt SoftHello", description: "Dyp marineblå med indigo- og tealaksenter." },
     ocean: { label: "Havro", description: "Blå, aqua og myke himmeltoner." },
     forest: { label: "Sosial skog", description: "Eviggrønne flater med varme og vennlige høydepunkter." },
     sunset: { label: "Varm solnedgang", description: "Korall- og gullaksenter for en mykere stemning." },
     lavender: { label: "Rolig lavendel", description: "Myke lilla aksenter for en roligere sosial følelse." },
   },
   Polish: {
-    midnight: { label: "Północ NSN", description: "Głęboki granat z akcentami indygo i teal." },
+    midnight: { label: "Północ SoftHello", description: "Głęboki granat z akcentami indygo i teal." },
     ocean: { label: "Oceaniczny spokój", description: "Niebieskie, aqua i miękkie odcienie nieba." },
     forest: { label: "Społeczny las", description: "Wiecznie zielone powierzchnie z ciepłymi, przyjaznymi akcentami." },
     sunset: { label: "Ciepły zachód", description: "Koralowe i złote akcenty dla łagodniejszego nastroju." },
     lavender: { label: "Cicha lawenda", description: "Miękkie fioletowe akcenty dla spokojniejszego społecznego odczucia." },
   },
   Portuguese: {
-    midnight: { label: "Meia-noite NSN", description: "Azul-marinho profundo com acentos índigo e teal." },
+    midnight: { label: "Meia-noite SoftHello", description: "Azul-marinho profundo com acentos índigo e teal." },
     ocean: { label: "Calma oceano", description: "Tons azuis, aqua e céu suave." },
     forest: { label: "Floresta social", description: "Superfícies verdes com destaques quentes e amigáveis." },
     sunset: { label: "Pôr do sol quente", description: "Acentos coral e dourados para um ambiente mais suave." },
     lavender: { label: "Lavanda tranquila", description: "Acentos roxos suaves para uma sensação social mais calma." },
   },
   Romanian: {
-    midnight: { label: "Miez de noapte NSN", description: "Bleumarin profund cu accente indigo și teal." },
+    midnight: { label: "Miez de noapte SoftHello", description: "Bleumarin profund cu accente indigo și teal." },
     ocean: { label: "Calm oceanic", description: "Tonuri albastre, aqua și cer blând." },
     forest: { label: "Pădure socială", description: "Suprafețe verzi cu accente calde și prietenoase." },
     sunset: { label: "Apus cald", description: "Accente corai și aurii pentru o stare mai blândă." },
     lavender: { label: "Lavandă liniștită", description: "Accente mov delicate pentru o senzație socială mai calmă." },
   },
   Slovak: {
-    midnight: { label: "Polnočný NSN", description: "Hlboká námornícka modrá s indigovými a tyrkysovými akcentmi." },
+    midnight: { label: "Polnočný SoftHello", description: "Hlboká námornícka modrá s indigovými a tyrkysovými akcentmi." },
     ocean: { label: "Oceánsky pokoj", description: "Modré, aqua a jemné nebeské tóny." },
     forest: { label: "Spoločenský les", description: "Vždyzelené povrchy s teplými a priateľskými akcentmi." },
     sunset: { label: "Teplý západ", description: "Koralové a zlaté akcenty pre jemnejšiu náladu." },
     lavender: { label: "Tichá levanduľa", description: "Jemné fialové akcenty pre pokojnejší spoločenský pocit." },
   },
   Swedish: {
-    midnight: { label: "Midnatt NSN", description: "Djup marinblå med indigo- och tealaccenter." },
+    midnight: { label: "Midnatt SoftHello", description: "Djup marinblå med indigo- och tealaccenter." },
     ocean: { label: "Oceanro", description: "Blå, aqua och mjuka himmelstoner." },
     forest: { label: "Social skog", description: "Vintergröna ytor med varma, vänliga accenter." },
     sunset: { label: "Varm solnedgång", description: "Korall- och guldaccenter för en mjukare stämning." },
     lavender: { label: "Stilla lavendel", description: "Mjuka lila accenter för en lugnare social känsla." },
   },
   Ukrainian: {
-    midnight: { label: "Північ NSN", description: "Глибокий темно-синій з акцентами індиго та бірюзи." },
+    midnight: { label: "Північ SoftHello", description: "Глибокий темно-синій з акцентами індиго та бірюзи." },
     ocean: { label: "Океанський спокій", description: "Сині, аква та м'які небесні тони." },
     forest: { label: "Соціальний ліс", description: "Вічнозелені поверхні з теплими дружніми акцентами." },
     sunset: { label: "Теплий захід", description: "Коралові та золоті акценти для м'якшого настрою." },
     lavender: { label: "Тиха лаванда", description: "М'які фіолетові акценти для спокійнішого соціального відчуття." },
   },
   Yiddish: {
-    midnight: { label: "האלבע נאכט NSN", description: "טיף מארינבלוי מיט אינדיגא און טיל אקצענטן." },
+    midnight: { label: "האלבע נאכט SoftHello", description: "טיף מארינבלוי מיט אינדיגא און טיל אקצענטן." },
     ocean: { label: "אקעאן-רואיקייט", description: "בלויע, אקווא און ווייכע הימל-טאנען." },
     forest: { label: "געזעלשאפטלעכער וואלד", description: "אייביג-גרינע אויבערפלעכן מיט ווארעמע פריינטלעכע אקצענטן." },
     sunset: { label: "ווארעמער זונפארגאנג", description: "קאראל און גאלד אקצענטן פאר א ווייכערער שטימונג." },
@@ -3098,7 +3098,7 @@ export default function SettingsScreen() {
         showsVerticalScrollIndicator
       >
         <TouchableOpacity activeOpacity={0.75} onPress={() => router.back()} style={[styles.backButton, isDay && styles.dayIconButton]} accessibilityRole="button" accessibilityLabel="Go back">
-          <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : nsnColors.text} size={24} />
+          <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : softHelloColors.text} size={24} />
         </TouchableOpacity>
 
         <Text style={[styles.title, largerText && styles.largeTitle, isDay && styles.dayTitle, contrastTextStyle, isRtl && styles.rtlText]}>{copy.title}</Text>
@@ -3118,8 +3118,8 @@ export default function SettingsScreen() {
                 onValueChange={row.onValueChange}
                 accessibilityLabel={row.label}
                 accessibilityHint={screenReaderHints ? row.copy : undefined}
-                trackColor={{ false: isDay ? "#B8C9E6" : nsnColors.border, true: paletteAccent }}
-                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : nsnColors.muted}
+                trackColor={{ false: isDay ? "#B8C9E6" : softHelloColors.border, true: paletteAccent }}
+                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : softHelloColors.muted}
               />
             </View>
           ))}
@@ -3140,8 +3140,8 @@ export default function SettingsScreen() {
                 onValueChange={row.onValueChange}
                 accessibilityLabel={row.label}
                 accessibilityHint={screenReaderHints ? row.copy : undefined}
-                trackColor={{ false: isDay ? "#B8C9E6" : nsnColors.border, true: paletteAccent }}
-                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : nsnColors.muted}
+                trackColor={{ false: isDay ? "#B8C9E6" : softHelloColors.border, true: paletteAccent }}
+                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : softHelloColors.muted}
               />
             </View>
           ))}
@@ -3162,8 +3162,8 @@ export default function SettingsScreen() {
                 onValueChange={row.onValueChange}
                 accessibilityLabel={row.label}
                 accessibilityHint={screenReaderHints ? row.copy : undefined}
-                trackColor={{ false: isDay ? "#B8C9E6" : nsnColors.border, true: paletteAccent }}
-                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : nsnColors.muted}
+                trackColor={{ false: isDay ? "#B8C9E6" : softHelloColors.border, true: paletteAccent }}
+                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : softHelloColors.muted}
               />
             </View>
           ))}
@@ -3184,8 +3184,8 @@ export default function SettingsScreen() {
                 onValueChange={row.onValueChange}
                 accessibilityLabel={row.label}
                 accessibilityHint={screenReaderHints ? row.copy : undefined}
-                trackColor={{ false: isDay ? "#B8C9E6" : nsnColors.border, true: paletteAccent }}
-                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : nsnColors.muted}
+                trackColor={{ false: isDay ? "#B8C9E6" : softHelloColors.border, true: paletteAccent }}
+                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : softHelloColors.muted}
               />
             </View>
           ))}
@@ -3222,8 +3222,8 @@ export default function SettingsScreen() {
                 onValueChange={row.onValueChange}
                 accessibilityLabel={row.label}
                 accessibilityHint={screenReaderHints ? row.copy : undefined}
-                trackColor={{ false: isDay ? "#B8C9E6" : nsnColors.border, true: paletteAccent }}
-                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : nsnColors.muted}
+                trackColor={{ false: isDay ? "#B8C9E6" : softHelloColors.border, true: paletteAccent }}
+                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : softHelloColors.muted}
               />
             </View>
           ))}
@@ -3247,8 +3247,8 @@ export default function SettingsScreen() {
                 onValueChange={row.onValueChange}
                 accessibilityLabel={row.label}
                 accessibilityHint={screenReaderHints ? row.copy : undefined}
-                trackColor={{ false: isDay ? "#B8C9E6" : nsnColors.border, true: paletteAccent }}
-                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : nsnColors.muted}
+                trackColor={{ false: isDay ? "#B8C9E6" : softHelloColors.border, true: paletteAccent }}
+                thumbColor={row.value ? "#FFFFFF" : isDay ? "#F4F9FF" : softHelloColors.muted}
               />
             </View>
           ))}
@@ -3353,7 +3353,7 @@ export default function SettingsScreen() {
                   selectExactLanguage(value, setAppLanguage, setAppLanguageRegionBase);
                 }}
                 placeholder={copy.searchLanguage ?? englishCopy.searchLanguage}
-                placeholderTextColor={isDay ? "#5F728F" : nsnColors.mutedSoft}
+                placeholderTextColor={isDay ? "#5F728F" : softHelloColors.mutedSoft}
                 style={[styles.languageSearchInput, isDay && styles.dayLanguageSearchInput, largerText && styles.largeDropdownText, isRtl && styles.rtlSearchInput]}
                 accessibilityLabel={copy.searchLanguage ?? englishCopy.searchLanguage}
               />
@@ -3444,7 +3444,7 @@ export default function SettingsScreen() {
                   selectExactLanguage(value, setTranslationLanguage, setTranslationLanguageRegionBase);
                 }}
                 placeholder={copy.searchLanguage ?? englishCopy.searchLanguage}
-                placeholderTextColor={isDay ? "#5F728F" : nsnColors.mutedSoft}
+                placeholderTextColor={isDay ? "#5F728F" : softHelloColors.mutedSoft}
                 style={[styles.languageSearchInput, isDay && styles.dayLanguageSearchInput, largerText && styles.largeDropdownText, isRtl && styles.rtlSearchInput]}
                 accessibilityLabel={copy.searchLanguage ?? englishCopy.searchLanguage}
               />
@@ -3509,7 +3509,7 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: nsnColors.background,
+    backgroundColor: softHelloColors.background,
   },
   container: {
     padding: 20,
@@ -3531,7 +3531,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#DCEEFF",
   },
   title: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 28,
     fontWeight: "900",
     marginBottom: 8,
@@ -3544,7 +3544,7 @@ const styles = StyleSheet.create({
     color: "#0B1220",
   },
   subtitle: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 15,
     marginBottom: 20,
   },
@@ -3558,7 +3558,7 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 18,
     borderWidth: 1,
-    backgroundColor: nsnColors.surface,
+    backgroundColor: softHelloColors.surface,
     overflow: "hidden",
   },
   dayCard: {
@@ -3570,7 +3570,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   sectionTitle: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 16,
     fontWeight: "800",
     lineHeight: 22,
@@ -3617,7 +3617,7 @@ const styles = StyleSheet.create({
   },
   rowDivider: {
     borderBottomWidth: 1,
-    borderBottomColor: nsnColors.border,
+    borderBottomColor: softHelloColors.border,
   },
   dayRowDivider: {
     borderBottomColor: "#B8C9E6",
@@ -3652,7 +3652,7 @@ const styles = StyleSheet.create({
     minHeight: 38,
     borderRadius: 19,
     borderWidth: 1,
-    borderColor: nsnColors.border,
+    borderColor: softHelloColors.border,
     backgroundColor: "rgba(255,255,255,0.04)",
     flexDirection: "row",
     alignItems: "center",
@@ -3687,7 +3687,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   dropdownText: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 13,
     fontWeight: "800",
   },
@@ -3695,7 +3695,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   dropdownChevron: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 14,
     fontWeight: "900",
     lineHeight: 18,
@@ -3729,7 +3729,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: "#314666",
-    color: nsnColors.text,
+    color: softHelloColors.text,
     backgroundColor: "rgba(255,255,255,0.04)",
     paddingHorizontal: 12,
     fontSize: 13,
@@ -3772,12 +3772,12 @@ const styles = StyleSheet.create({
     height: 34,
     borderRadius: 17,
     borderWidth: 1,
-    borderColor: nsnColors.border,
+    borderColor: softHelloColors.border,
     alignItems: "center",
     justifyContent: "center",
   },
   languageRegionBackText: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 22,
     fontWeight: "800",
     lineHeight: 24,
@@ -3817,12 +3817,12 @@ const styles = StyleSheet.create({
     borderBottomColor: "#C7D8F0",
   },
   dropdownOptionText: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 13,
     fontWeight: "700",
   },
   dropdownNativeText: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 11,
     lineHeight: 15,
     marginTop: 1,
@@ -3832,28 +3832,28 @@ const styles = StyleSheet.create({
     height: 22,
     borderRadius: 11,
     borderWidth: 2,
-    borderColor: nsnColors.mutedSoft,
+    borderColor: softHelloColors.mutedSoft,
     alignItems: "center",
     justifyContent: "center",
   },
   radioOuterSelected: {
-    borderColor: nsnColors.primary,
+    borderColor: softHelloColors.primary,
   },
   radioInner: {
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: nsnColors.primary,
+    backgroundColor: softHelloColors.primary,
   },
   noResultsText: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 13,
     fontWeight: "700",
     paddingHorizontal: 18,
     paddingVertical: 14,
   },
   label: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 15,
     fontWeight: "700",
     lineHeight: 20,
@@ -3881,7 +3881,7 @@ const styles = StyleSheet.create({
     color: "#E5EDFF",
   },
   helperText: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 12,
     lineHeight: 17,
     marginTop: 3,

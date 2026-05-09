@@ -27,4 +27,4 @@ This script needs Pillow installed in the active Python environment.
 
 ## `reset-project.js`
 
-Expo starter helper for wiping the sample app structure. Keep this as a last-resort scaffold reset tool, not part of the normal NSN workflow.
+Expo starter helper for wiping the sample app structure. Keep this as a last-resort scaffold reset tool, not part of the normal SoftHello workflow.

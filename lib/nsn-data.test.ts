@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { allEvents, chatSeed, dayEvents, eveningEvents, movieNight, nsnColors, profileVibes } from "./nsn-data";
+import { allEvents, chatSeed, dayEvents, eveningEvents, movieNight, softHelloColors, profileVibes } from "./nsn-data";
 
-describe("NSN prototype data", () => {
+describe("SoftHello prototype data", () => {
   it("keeps event identifiers unique and route-safe", () => {
     const ids = allEvents.map((event) => event.id);
 
@@ -28,9 +28,9 @@ describe("NSN prototype data", () => {
     expect(profileVibes).toEqual(expect.arrayContaining(["🌿 Calm", "👥 Small groups", "☕ Coffee", "🎬 Movies", "📚 Libraries"]));
   });
 
-  it("uses a dark, high-contrast NSN palette", () => {
-    expect(nsnColors.background).toBe("#020814");
-    expect(nsnColors.text).toBe("#F5F7FF");
-    expect(nsnColors.primary).toBe("#3848FF");
+  it("uses a dark, high-contrast SoftHello palette", () => {
+    expect(softHelloColors.background).toBe("#020814");
+    expect(softHelloColors.text).toBe("#F5F7FF");
+    expect(softHelloColors.primary).toBe("#3848FF");
   });
 });

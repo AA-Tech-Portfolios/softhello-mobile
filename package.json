@@ -1,7 +1,7 @@
 {
   "name": "nsn-mobile",
   "version": "1.0.0",
-  "description": "North Shore Nights, a low-pressure social meetup app for small, local connections.",
+  "description": "SoftHello is a low-pressure social discovery platform focused on meaningful local connections.",
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
