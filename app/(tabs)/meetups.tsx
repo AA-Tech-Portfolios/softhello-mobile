@@ -3,7 +3,7 @@ import { useRouter } from "expo-router";
 
 import { getLanguageBase, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
-import { dayEvents, eveningEvents, nsnColors } from "@/lib/nsn-data";
+import { dayEvents, eveningEvents, softHelloColors } from "@/lib/nsn-data";
 import { canChatPrivately, deriveVerificationLevel, getVerificationLevelLabel } from "@/lib/softhello-mvp";
 
 const upcoming = [eveningEvents[0], dayEvents[0], eveningEvents[1]];
@@ -248,36 +248,36 @@ export default function MeetupsScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: nsnColors.background },
+  screen: { flex: 1, backgroundColor: softHelloColors.background },
   dayContainer: { backgroundColor: "#EAF4FF" },
   content: { paddingHorizontal: 20, paddingTop: 12, paddingBottom: 28 },
-  title: { color: nsnColors.text, fontSize: 28, fontWeight: "800", lineHeight: 35 },
+  title: { color: softHelloColors.text, fontSize: 28, fontWeight: "800", lineHeight: 35 },
   dayTitle: { color: "#0B1220" },
-  subtitle: { color: nsnColors.muted, fontSize: 14, lineHeight: 21, marginBottom: 18 },
+  subtitle: { color: softHelloColors.muted, fontSize: 14, lineHeight: 21, marginBottom: 18 },
   dayMutedText: { color: "#3B4A63" },
-  summaryCard: { borderRadius: 24, backgroundColor: nsnColors.surfaceRaised, borderWidth: 1, borderColor: "#2B4578", padding: 18, marginBottom: 22 },
+  summaryCard: { borderRadius: 24, backgroundColor: softHelloColors.surfaceRaised, borderWidth: 1, borderColor: "#2B4578", padding: 18, marginBottom: 22 },
   dayCard: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
-  summaryLabel: { color: nsnColors.day, fontSize: 12, fontWeight: "800", lineHeight: 17, marginBottom: 8 },
+  summaryLabel: { color: softHelloColors.day, fontSize: 12, fontWeight: "800", lineHeight: 17, marginBottom: 8 },
   dayAccentText: { color: "#3949DB" },
-  summaryTitle: { color: nsnColors.text, fontSize: 21, fontWeight: "800", lineHeight: 27 },
-  summaryCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 20, marginTop: 6, marginBottom: 14 },
-  summaryButton: { alignSelf: "flex-start", backgroundColor: nsnColors.primary, borderRadius: 15, paddingHorizontal: 16, paddingVertical: 9 },
-  summaryButtonText: { color: nsnColors.text, fontWeight: "800", fontSize: 13 },
-  trustGateCard: { borderRadius: 22, backgroundColor: nsnColors.surfaceRaised, borderWidth: 1, borderColor: "#2B4578", padding: 18, marginBottom: 22 },
-  gateTitle: { color: nsnColors.text, fontSize: 17, fontWeight: "900", lineHeight: 23 },
-  gateCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 20, marginTop: 6, marginBottom: 10 },
-  gateStatus: { color: nsnColors.day, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 12 },
-  gateButton: { width: "100%", minHeight: 46, borderRadius: 15, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 14, paddingVertical: 10 },
+  summaryTitle: { color: softHelloColors.text, fontSize: 21, fontWeight: "800", lineHeight: 27 },
+  summaryCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 20, marginTop: 6, marginBottom: 14 },
+  summaryButton: { alignSelf: "flex-start", backgroundColor: softHelloColors.primary, borderRadius: 15, paddingHorizontal: 16, paddingVertical: 9 },
+  summaryButtonText: { color: softHelloColors.text, fontWeight: "800", fontSize: 13 },
+  trustGateCard: { borderRadius: 22, backgroundColor: softHelloColors.surfaceRaised, borderWidth: 1, borderColor: "#2B4578", padding: 18, marginBottom: 22 },
+  gateTitle: { color: softHelloColors.text, fontSize: 17, fontWeight: "900", lineHeight: 23 },
+  gateCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 20, marginTop: 6, marginBottom: 10 },
+  gateStatus: { color: softHelloColors.day, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 12 },
+  gateButton: { width: "100%", minHeight: 46, borderRadius: 15, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 14, paddingVertical: 10 },
   gateButtonText: { color: "#FFFFFF", fontSize: 14, fontWeight: "900", lineHeight: 20, textAlign: "center" },
-  sectionTitle: { color: nsnColors.text, fontSize: 17, fontWeight: "800", lineHeight: 24, marginBottom: 10 },
+  sectionTitle: { color: softHelloColors.text, fontSize: 17, fontWeight: "800", lineHeight: 24, marginBottom: 10 },
   list: { gap: 10 },
-  meetupCard: { minHeight: 88, borderRadius: 18, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, flexDirection: "row", alignItems: "center", padding: 10 },
+  meetupCard: { minHeight: 88, borderRadius: 18, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, flexDirection: "row", alignItems: "center", padding: 10 },
   emojiBox: { width: 64, height: 64, borderRadius: 14, alignItems: "center", justifyContent: "center" },
   emoji: { fontSize: 29 },
   cardBody: { flex: 1, paddingHorizontal: 11 },
-  cardTitle: { color: nsnColors.text, fontSize: 14, fontWeight: "800", lineHeight: 19 },
-  cardMeta: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
-  cardCopy: { color: nsnColors.green, fontSize: 11, lineHeight: 16, marginTop: 3, fontWeight: "700" },
+  cardTitle: { color: softHelloColors.text, fontSize: 14, fontWeight: "800", lineHeight: 19 },
+  cardMeta: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  cardCopy: { color: softHelloColors.green, fontSize: 11, lineHeight: 16, marginTop: 3, fontWeight: "700" },
   daySuccessText: { color: "#2F7A3C" },
-  chevron: { color: nsnColors.muted, fontSize: 30, lineHeight: 34 },
+  chevron: { color: softHelloColors.muted, fontSize: 30, lineHeight: 34 },
 });

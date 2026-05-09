@@ -5,7 +5,7 @@ import { useRouter } from "expo-router";
 import { getLanguageBase, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { allEvents, chatSeed, nsnColors, type EventItem } from "@/lib/nsn-data";
+import { allEvents, chatSeed, softHelloColors, type EventItem } from "@/lib/nsn-data";
 import {
   blockUser,
   cancelSafetyReport,
@@ -1148,7 +1148,7 @@ export default function ChatsScreen() {
             accessibilityLabel={chatMenuCopy.openLabel}
             accessibilityHint={screenReaderHints ? "Returns to the chat chooser." : undefined}
           >
-            <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : nsnColors.text} size={24} />
+            <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : softHelloColors.text} size={24} />
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.78}
@@ -1183,7 +1183,7 @@ export default function ChatsScreen() {
             accessibilityLabel={copy.safetyTitle}
             accessibilityHint={screenReaderHints ? "Opens private safety, report, and block options for this chat." : undefined}
           >
-            <IconSymbol name="more" color={isDay ? "#0B1220" : nsnColors.text} size={21} />
+            <IconSymbol name="more" color={isDay ? "#0B1220" : softHelloColors.text} size={21} />
           </TouchableOpacity>
           {!isPersonChat ? (
             <TouchableOpacity
@@ -1198,7 +1198,7 @@ export default function ChatsScreen() {
               accessibilityLabel={copy.softExitTitle}
               accessibilityHint={screenReaderHints ? "Opens gentle options for stepping back from this meetup chat." : undefined}
             >
-              <IconSymbol name="settings" color={isDay ? "#0B1220" : nsnColors.text} size={21} />
+              <IconSymbol name="settings" color={isDay ? "#0B1220" : softHelloColors.text} size={21} />
             </TouchableOpacity>
           ) : null}
         </View>
@@ -1567,21 +1567,21 @@ export default function ChatsScreen() {
             </TouchableOpacity>
           )}
           <TouchableOpacity activeOpacity={0.75} style={[styles.addButton, isDay && styles.dayCard]}>
-            <IconSymbol name="add" color={isDay ? "#0B1220" : nsnColors.text} size={24} />
+            <IconSymbol name="add" color={isDay ? "#0B1220" : softHelloColors.text} size={24} />
           </TouchableOpacity>
           <View style={[styles.inputWrap, isDay && styles.dayInputWrap]}>
             <TextInput
               value={draft}
               onChangeText={setDraft}
               placeholder={copy.placeholder}
-              placeholderTextColor={isDay ? "#7890AE" : nsnColors.mutedSoft}
+              placeholderTextColor={isDay ? "#7890AE" : softHelloColors.mutedSoft}
               style={[styles.input, isDay && styles.dayTitle, isRtl && styles.rtlInput]}
               textAlign={isRtl ? "right" : "left"}
               returnKeyType="send"
               onSubmitEditing={sendMessage}
             />
             <TouchableOpacity activeOpacity={0.8} onPress={sendMessage} style={styles.sendButton}>
-              <IconSymbol name="paperplane.fill" color={nsnColors.text} size={19} />
+              <IconSymbol name="paperplane.fill" color={softHelloColors.text} size={19} />
             </TouchableOpacity>
           </View>
           <Text style={[styles.disclaimer, isDay && styles.dayMutedText]}>{copy.disclaimer}</Text>
@@ -1592,131 +1592,131 @@ export default function ChatsScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: nsnColors.background, paddingHorizontal: 18 },
+  screen: { flex: 1, backgroundColor: softHelloColors.background, paddingHorizontal: 18 },
   dayContainer: { backgroundColor: "#EAF4FF" },
-  header: { flexDirection: "row", alignItems: "center", gap: 10, paddingTop: 8, paddingBottom: 12, borderBottomWidth: 1, borderColor: nsnColors.border },
+  header: { flexDirection: "row", alignItems: "center", gap: 10, paddingTop: 8, paddingBottom: 12, borderBottomWidth: 1, borderColor: softHelloColors.border },
   dayHeader: { borderColor: "#B8C9E6" },
-  eventAvatar: { width: 42, height: 42, borderRadius: 21, backgroundColor: "#26133F", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: nsnColors.primary },
+  eventAvatar: { width: 42, height: 42, borderRadius: 21, backgroundColor: "#26133F", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: softHelloColors.primary },
   eventEmoji: { fontSize: 22 },
   eventInitial: { color: "#FFFFFF", fontSize: 16, fontWeight: "900" },
   chatPickerButton: { flex: 1, minHeight: 46, flexDirection: "row", alignItems: "center", gap: 10, borderRadius: 16, paddingRight: 8 },
   headerText: { flex: 1 },
-  title: { color: nsnColors.text, fontSize: 16, fontWeight: "800", lineHeight: 21 },
+  title: { color: softHelloColors.text, fontSize: 16, fontWeight: "800", lineHeight: 21 },
   dayTitle: { color: "#0B1220" },
-  subtitle: { color: nsnColors.muted, fontSize: 12, lineHeight: 17 },
+  subtitle: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17 },
   dayMutedText: { color: "#3B4A63" },
   dayAccentText: { color: "#3949DB" },
-  chatPickerChevron: { width: 20, color: nsnColors.muted, fontSize: 18, fontWeight: "900", lineHeight: 22, textAlign: "center" },
+  chatPickerChevron: { width: 20, color: softHelloColors.muted, fontSize: 18, fontWeight: "900", lineHeight: 22, textAlign: "center" },
   iconButton: { width: 38, height: 38, borderRadius: 19, alignItems: "center", justifyContent: "center" },
-  chatMenu: { maxHeight: 360, borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 10, marginTop: 10, marginBottom: 8 },
-  chatMenuTitle: { color: nsnColors.muted, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 8 },
-  chatMenuSectionTitle: { color: nsnColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15, marginTop: 4, marginBottom: 6, textTransform: "uppercase" },
+  chatMenu: { maxHeight: 360, borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 10, marginTop: 10, marginBottom: 8 },
+  chatMenuTitle: { color: softHelloColors.muted, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 8 },
+  chatMenuSectionTitle: { color: softHelloColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15, marginTop: 4, marginBottom: 6, textTransform: "uppercase" },
   chatMenuList: { maxHeight: 300 },
   chatMenuListContent: { gap: 8 },
-  chatMenuItem: { minHeight: 64, borderRadius: 14, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.035)", flexDirection: "row", alignItems: "center", gap: 10, padding: 10 },
-  chatMenuItemActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary },
+  chatMenuItem: { minHeight: 64, borderRadius: 14, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.035)", flexDirection: "row", alignItems: "center", gap: 10, padding: 10 },
+  chatMenuItemActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary },
   chatMenuEmoji: { width: 40, height: 40, borderRadius: 12, alignItems: "center", justifyContent: "center" },
   chatMenuEmojiText: { fontSize: 20 },
   chatMenuInitialText: { color: "#FFFFFF", fontSize: 15, fontWeight: "900" },
   chatMenuItemBody: { flex: 1 },
-  chatMenuItemTitle: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  chatMenuItemMeta: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
-  chatMenuStatus: { width: 20, color: nsnColors.muted, fontSize: 16, fontWeight: "900", textAlign: "center" },
+  chatMenuItemTitle: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  chatMenuItemMeta: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  chatMenuStatus: { width: 20, color: softHelloColors.muted, fontSize: 16, fontWeight: "900", textAlign: "center" },
   chatMenuItemTextActive: { color: "#FFFFFF" },
   chat: { flex: 1 },
   chatContent: { paddingTop: 16, paddingBottom: 16 },
   chatSelectionContent: { paddingTop: 22, paddingBottom: 28 },
-  chatSelectionTitle: { color: nsnColors.text, fontSize: 28, fontWeight: "900", lineHeight: 35 },
-  chatSelectionCopy: { color: nsnColors.muted, fontSize: 14, lineHeight: 21, marginTop: 4, marginBottom: 18 },
+  chatSelectionTitle: { color: softHelloColors.text, fontSize: 28, fontWeight: "900", lineHeight: 35 },
+  chatSelectionCopy: { color: softHelloColors.muted, fontSize: 14, lineHeight: 21, marginTop: 4, marginBottom: 18 },
   chatSelectionList: { gap: 8, marginBottom: 18 },
   dayPill: { alignSelf: "center", backgroundColor: "rgba(255,255,255,0.05)", paddingHorizontal: 13, paddingVertical: 7, borderRadius: 15, marginBottom: 14 },
   dayPillLight: { backgroundColor: "#DCEEFF" },
-  dayPillText: { color: nsnColors.muted, fontSize: 12, fontWeight: "700" },
-  systemNotice: { alignSelf: "center", width: "68%", borderRadius: 16, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, paddingVertical: 12, paddingHorizontal: 13, marginBottom: 18 },
+  dayPillText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "700" },
+  systemNotice: { alignSelf: "center", width: "68%", borderRadius: 16, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, paddingVertical: 12, paddingHorizontal: 13, marginBottom: 18 },
   dayCard: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
-  systemText: { color: nsnColors.text, textAlign: "center", fontSize: 12, lineHeight: 17 },
-  systemSubtext: { color: nsnColors.muted, textAlign: "center", fontSize: 12, lineHeight: 17 },
-  trustGateCard: { borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 16, marginTop: 16 },
-  trustGateTitle: { color: nsnColors.text, fontSize: 17, fontWeight: "900", lineHeight: 23 },
-  trustGateCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 20, marginTop: 6, marginBottom: 10 },
-  trustGateStatus: { color: nsnColors.day, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 12 },
-  trustGateButton: { width: "100%", minHeight: 46, borderRadius: 15, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 14, paddingVertical: 10 },
+  systemText: { color: softHelloColors.text, textAlign: "center", fontSize: 12, lineHeight: 17 },
+  systemSubtext: { color: softHelloColors.muted, textAlign: "center", fontSize: 12, lineHeight: 17 },
+  trustGateCard: { borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 16, marginTop: 16 },
+  trustGateTitle: { color: softHelloColors.text, fontSize: 17, fontWeight: "900", lineHeight: 23 },
+  trustGateCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 20, marginTop: 6, marginBottom: 10 },
+  trustGateStatus: { color: softHelloColors.day, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 12 },
+  trustGateButton: { width: "100%", minHeight: 46, borderRadius: 15, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 14, paddingVertical: 10 },
   trustGateButtonText: { color: "#FFFFFF", fontSize: 14, fontWeight: "900", lineHeight: 20, textAlign: "center" },
   softExitPanel: { borderRadius: 18, backgroundColor: "#0D1B2F", borderWidth: 1, borderColor: "#2B4578", padding: 14, marginBottom: 18 },
   daySoftExitPanel: { backgroundColor: "#FFFFFF", borderColor: "#B8C9E6" },
-  softExitTitle: { color: nsnColors.text, fontSize: 15, fontWeight: "800", lineHeight: 21, marginBottom: 4 },
-  softExitCopy: { color: nsnColors.muted, fontSize: 13, lineHeight: 19, marginBottom: 12 },
+  softExitTitle: { color: softHelloColors.text, fontSize: 15, fontWeight: "800", lineHeight: 21, marginBottom: 4 },
+  softExitCopy: { color: softHelloColors.muted, fontSize: 13, lineHeight: 19, marginBottom: 12 },
   softExitActions: { gap: 9 },
-  softExitAction: { borderRadius: 14, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, paddingHorizontal: 12, paddingVertical: 10 },
+  softExitAction: { borderRadius: 14, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, paddingHorizontal: 12, paddingVertical: 10 },
   daySoftExitAction: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
-  softExitActionText: { color: nsnColors.text, fontSize: 13, fontWeight: "800", lineHeight: 18 },
-  softExitActionCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 1 },
+  softExitActionText: { color: softHelloColors.text, fontSize: 13, fontWeight: "800", lineHeight: 18 },
+  softExitActionCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 1 },
   reportReasonStack: { gap: 8, paddingTop: 2, paddingBottom: 3 },
-  reportReasonHeading: { color: nsnColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15, letterSpacing: 0, textTransform: "uppercase" },
+  reportReasonHeading: { color: softHelloColors.muted, fontSize: 11, fontWeight: "900", lineHeight: 15, letterSpacing: 0, textTransform: "uppercase" },
   reportReasonButton: { borderRadius: 12, backgroundColor: "rgba(255,255,255,0.035)", borderWidth: 1, borderColor: "rgba(255,255,255,0.08)", paddingHorizontal: 11, paddingVertical: 9 },
   dayReportReasonButton: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6" },
-  reportReasonText: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  reportReasonCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  reportReasonText: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  reportReasonCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
   reportTargetGrid: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   reportTargetButton: { flexGrow: 1, minWidth: 118, minHeight: 50, borderRadius: 12, backgroundColor: "rgba(255,255,255,0.035)", borderWidth: 1, borderColor: "rgba(255,255,255,0.08)", paddingHorizontal: 10, paddingVertical: 8 },
-  reportTargetButtonActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary },
-  reportTargetName: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  reportTargetRole: { color: nsnColors.muted, fontSize: 11, fontWeight: "800", lineHeight: 15, marginTop: 1 },
+  reportTargetButtonActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary },
+  reportTargetName: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  reportTargetRole: { color: softHelloColors.muted, fontSize: 11, fontWeight: "800", lineHeight: 15, marginTop: 1 },
   reportTargetTextActive: { color: "#FFFFFF" },
   reportRouteStack: { gap: 8 },
   reportRouteButton: { borderRadius: 12, backgroundColor: "rgba(255,255,255,0.035)", borderWidth: 1, borderColor: "rgba(255,255,255,0.08)", paddingHorizontal: 11, paddingVertical: 9 },
-  cancelReportButton: { alignSelf: "flex-start", minHeight: 34, borderRadius: 999, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 12, marginTop: 9 },
+  cancelReportButton: { alignSelf: "flex-start", minHeight: 34, borderRadius: 999, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center", paddingHorizontal: 12, marginTop: 9 },
   cancelReportText: { color: "#FFFFFF", fontSize: 12, fontWeight: "900", lineHeight: 17 },
   blockChoiceCard: { borderRadius: 14, backgroundColor: "rgba(255,255,255,0.035)", borderWidth: 1, borderColor: "rgba(255,255,255,0.08)", padding: 12, gap: 8 },
-  blockChoiceTitle: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  blockChoiceCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17 },
+  blockChoiceTitle: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  blockChoiceCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17 },
   blockChoiceActions: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  blockChoiceButton: { flex: 1, minWidth: 130, minHeight: 40, borderRadius: 12, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, alignItems: "center", justifyContent: "center", paddingHorizontal: 10 },
+  blockChoiceButton: { flex: 1, minWidth: 130, minHeight: 40, borderRadius: 12, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, alignItems: "center", justifyContent: "center", paddingHorizontal: 10 },
   blockChoiceButtonDanger: { backgroundColor: "#B42318", borderColor: "#B42318" },
-  blockChoiceButtonText: { color: nsnColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
+  blockChoiceButtonText: { color: softHelloColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
   blockChoiceButtonTextDanger: { color: "#FFFFFF", fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
   blockCancelButton: { minHeight: 30, alignItems: "center", justifyContent: "center" },
-  blockCancelText: { color: nsnColors.muted, fontSize: 12, fontWeight: "800", lineHeight: 17 },
+  blockCancelText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "800", lineHeight: 17 },
   softExitResult: { borderRadius: 14, backgroundColor: "rgba(114,214,126,0.11)", borderWidth: 1, borderColor: "rgba(114,214,126,0.28)", padding: 12 },
   daySoftExitResult: { backgroundColor: "#E9F7ED", borderColor: "#A8D9B5" },
-  softExitResultText: { color: nsnColors.text, fontSize: 13, fontWeight: "800", lineHeight: 19 },
-  softExitResultSubtext: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 4 },
+  softExitResultText: { color: softHelloColors.text, fontSize: 13, fontWeight: "800", lineHeight: 19 },
+  softExitResultSubtext: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 4 },
   messageRow: { flexDirection: "row", gap: 9, marginBottom: 14, alignItems: "flex-end" },
   messageRowMine: { justifyContent: "flex-end" },
   avatar: { width: 34, height: 34, borderRadius: 17, backgroundColor: "#164E6A", alignItems: "center", justifyContent: "center" },
-  avatarText: { color: nsnColors.text, fontSize: 13, fontWeight: "800" },
+  avatarText: { color: softHelloColors.text, fontSize: 13, fontWeight: "800" },
   messageBlock: { maxWidth: "76%" },
   messageBlockMine: { alignItems: "flex-end" },
-  senderName: { color: nsnColors.muted, fontSize: 12, marginBottom: 4, lineHeight: 16 },
+  senderName: { color: softHelloColors.muted, fontSize: 12, marginBottom: 4, lineHeight: 16 },
   bubble: { borderRadius: 18, paddingHorizontal: 14, paddingTop: 10, paddingBottom: 8 },
-  theirBubble: { backgroundColor: nsnColors.surface, borderTopLeftRadius: 8 },
-  myBubble: { backgroundColor: nsnColors.primary, borderBottomRightRadius: 8 },
-  bubbleText: { color: nsnColors.text, fontSize: 14, lineHeight: 20 },
+  theirBubble: { backgroundColor: softHelloColors.surface, borderTopLeftRadius: 8 },
+  myBubble: { backgroundColor: softHelloColors.primary, borderBottomRightRadius: 8 },
+  bubbleText: { color: softHelloColors.text, fontSize: 14, lineHeight: 20 },
   messageTime: { alignSelf: "flex-end", color: "rgba(245,247,255,0.62)", fontSize: 11, marginTop: 4, lineHeight: 14 },
   dayMessageTime: { color: "#7890AE" },
   composerWrap: { paddingBottom: 10 },
-  arrivalPanel: { borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 10, marginBottom: 9 },
-  arrivalTitle: { color: nsnColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 8 },
+  arrivalPanel: { borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 10, marginBottom: 9 },
+  arrivalTitle: { color: softHelloColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, marginBottom: 8 },
   arrivalActions: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  arrivalButton: { flex: 1, minWidth: 130, minHeight: 38, borderRadius: 14, alignItems: "center", justifyContent: "center", backgroundColor: nsnColors.primary, paddingHorizontal: 10 },
-  arrivalButtonMuted: { backgroundColor: "rgba(255,255,255,0.06)", borderWidth: 1, borderColor: nsnColors.border },
+  arrivalButton: { flex: 1, minWidth: 130, minHeight: 38, borderRadius: 14, alignItems: "center", justifyContent: "center", backgroundColor: softHelloColors.primary, paddingHorizontal: 10 },
+  arrivalButtonMuted: { backgroundColor: "rgba(255,255,255,0.06)", borderWidth: 1, borderColor: softHelloColors.border },
   arrivalButtonText: { color: "#FFFFFF", fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
-  arrivalButtonMutedText: { color: nsnColors.text },
+  arrivalButtonMutedText: { color: softHelloColors.text },
   dayArrivalButtonMutedText: { color: "#0B1220" },
   cannotMakeItPanel: { gap: 8, marginTop: 10 },
-  cannotMakeItTitle: { color: nsnColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17 },
+  cannotMakeItTitle: { color: softHelloColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17 },
   cannotMakeItGrid: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  cannotMakeItReasonButton: { flexGrow: 1, minWidth: 150, minHeight: 36, borderRadius: 13, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.06)", alignItems: "center", justifyContent: "center", paddingHorizontal: 10 },
+  cannotMakeItReasonButton: { flexGrow: 1, minWidth: 150, minHeight: 36, borderRadius: 13, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.06)", alignItems: "center", justifyContent: "center", paddingHorizontal: 10 },
   dayCannotMakeItReasonButton: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6" },
-  cannotMakeItReasonText: { color: nsnColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
-  resumeButton: { minHeight: 40, borderRadius: 16, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, alignItems: "center", justifyContent: "center", marginBottom: 9 },
-  resumeButtonText: { color: nsnColors.text, fontSize: 13, fontWeight: "800" },
-  addButton: { position: "absolute", left: 0, bottom: 42, width: 40, height: 40, borderRadius: 20, backgroundColor: nsnColors.surface, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: nsnColors.border },
-  inputWrap: { marginLeft: 48, minHeight: 44, borderRadius: 22, backgroundColor: "#061121", borderWidth: 1, borderColor: nsnColors.border, flexDirection: "row", alignItems: "center", paddingLeft: 15, paddingRight: 5 },
+  cannotMakeItReasonText: { color: softHelloColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
+  resumeButton: { minHeight: 40, borderRadius: 16, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, alignItems: "center", justifyContent: "center", marginBottom: 9 },
+  resumeButtonText: { color: softHelloColors.text, fontSize: 13, fontWeight: "800" },
+  addButton: { position: "absolute", left: 0, bottom: 42, width: 40, height: 40, borderRadius: 20, backgroundColor: softHelloColors.surface, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: softHelloColors.border },
+  inputWrap: { marginLeft: 48, minHeight: 44, borderRadius: 22, backgroundColor: "#061121", borderWidth: 1, borderColor: softHelloColors.border, flexDirection: "row", alignItems: "center", paddingLeft: 15, paddingRight: 5 },
   dayInputWrap: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
-  input: { flex: 1, color: nsnColors.text, fontSize: 14, minHeight: 42 },
+  input: { flex: 1, color: softHelloColors.text, fontSize: 14, minHeight: 42 },
   rtlText: { textAlign: "right", writingDirection: "rtl" },
   rtlInput: { paddingRight: 2, writingDirection: "rtl" },
-  sendButton: { width: 34, height: 34, borderRadius: 17, backgroundColor: nsnColors.primary, alignItems: "center", justifyContent: "center" },
-  disclaimer: { color: nsnColors.muted, fontSize: 11, textAlign: "center", marginTop: 8, lineHeight: 15 },
+  sendButton: { width: 34, height: 34, borderRadius: 17, backgroundColor: softHelloColors.primary, alignItems: "center", justifyContent: "center" },
+  disclaimer: { color: softHelloColors.muted, fontSize: 11, textAlign: "center", marginTop: 8, lineHeight: 15 },
 });

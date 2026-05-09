@@ -1,4 +1,4 @@
-export const nsnColors = {
+export const softHelloColors = {
   background: "#020814",
   surface: "#071426",
   surfaceRaised: "#0B1D35",

@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { getLanguageBase, useAppSettings } from "@/lib/app-settings";
 import { HapticTab } from "@/components/haptic-tab";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { nsnColors } from "@/lib/nsn-data";
+import { softHelloColors } from "@/lib/nsn-data";
 
 const tabLabels: Record<string, { home: string; meetups: string; chats: string; alerts: string; profile: string }> = {
   English: { home: "Home", meetups: "Meetups", chats: "Chats", alerts: "Alerts", profile: "Profile" },
@@ -67,7 +67,7 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: activeTintColor,
-        tabBarInactiveTintColor: nsnColors.mutedSoft,
+        tabBarInactiveTintColor: softHelloColors.mutedSoft,
         tabBarButton: HapticTab,
         tabBarLabelStyle: {
           fontSize: 11,
@@ -83,8 +83,8 @@ export default function TabLayout() {
           height: (largerTouchTargets ? 76 : 66) + bottomPadding,
           paddingTop: largerTouchTargets ? 12 : 9,
           paddingBottom: bottomPadding,
-          backgroundColor: reduceTransparency ? (isDay ? "#FFFFFF" : "#020814") : isDay ? "#F4F9FF" : nsnColors.background,
-          borderTopColor: clearBorders ? (isDay ? "#6F8BB8" : "#5A6EA5") : softSurfaces ? (isDay ? "#D5E5F8" : "rgba(148,163,184,0.18)") : isDay ? "#B8C9E6" : nsnColors.border,
+          backgroundColor: reduceTransparency ? (isDay ? "#FFFFFF" : "#020814") : isDay ? "#F4F9FF" : softHelloColors.background,
+          borderTopColor: clearBorders ? (isDay ? "#6F8BB8" : "#5A6EA5") : softSurfaces ? (isDay ? "#D5E5F8" : "rgba(148,163,184,0.18)") : isDay ? "#B8C9E6" : softHelloColors.border,
           borderTopWidth: clearBorders ? 1.5 : softSurfaces ? 0.6 : 0.8,
         },
       }}

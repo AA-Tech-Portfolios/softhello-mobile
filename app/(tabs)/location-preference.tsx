@@ -6,7 +6,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { AustralianLocality, australianLocalities, getAustralianLocalityLabel } from "@/lib/australian-localities";
 import { getLanguageBase, type SoftHelloIntent, useAppSettings } from "@/lib/app-settings";
-import { nsnColors } from "@/lib/nsn-data";
+import { softHelloColors } from "@/lib/nsn-data";
 
 const intentOptions: SoftHelloIntent[] = ["Friends", "Dating", "Both", "Exploring"];
 const rtlLanguages = new Set(["Arabic", "Hebrew", "Persian", "Urdu", "Yiddish"]);
@@ -161,7 +161,7 @@ export default function LocationPreferenceScreen() {
           accessibilityRole="button"
           accessibilityLabel="Go back"
         >
-          <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : nsnColors.text} size={24} />
+          <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : softHelloColors.text} size={24} />
         </TouchableOpacity>
 
         <View style={[styles.headerCard, isDay && styles.dayCard]}>
@@ -183,7 +183,7 @@ export default function LocationPreferenceScreen() {
               value={draftSuburb}
               onChangeText={updateSuburb}
               placeholder={copy.suburbPlaceholder}
-              placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+              placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
               style={[styles.input, isDay && styles.dayInput, isRtl && styles.rtlInput]}
             />
             {selectedLocality ? (
@@ -267,37 +267,37 @@ export default function LocationPreferenceScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: nsnColors.background },
+  screen: { flex: 1, backgroundColor: softHelloColors.background },
   dayContainer: { backgroundColor: "#EAF4FF" },
   content: { paddingHorizontal: 20, paddingTop: 8, paddingBottom: 34, gap: 16 },
   backButton: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.04)" },
   dayIconButton: { backgroundColor: "#DCEEFF" },
-  headerCard: { borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, padding: 16 },
-  title: { color: nsnColors.text, fontSize: 26, fontWeight: "900", lineHeight: 32 },
-  copy: { color: nsnColors.muted, fontSize: 14, lineHeight: 21, marginTop: 6 },
-  summaryCard: { borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.025)", padding: 14 },
-  summaryLabel: { color: nsnColors.muted, fontSize: 12, fontWeight: "800", lineHeight: 17, textTransform: "uppercase" },
-  summaryText: { color: nsnColors.text, fontSize: 15, fontWeight: "800", lineHeight: 22, marginTop: 4 },
+  headerCard: { borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, padding: 16 },
+  title: { color: softHelloColors.text, fontSize: 26, fontWeight: "900", lineHeight: 32 },
+  copy: { color: softHelloColors.muted, fontSize: 14, lineHeight: 21, marginTop: 6 },
+  summaryCard: { borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.025)", padding: 14 },
+  summaryLabel: { color: softHelloColors.muted, fontSize: 12, fontWeight: "800", lineHeight: 17, textTransform: "uppercase" },
+  summaryText: { color: softHelloColors.text, fontSize: 15, fontWeight: "800", lineHeight: 22, marginTop: 4 },
   formStack: { gap: 18 },
-  label: { color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20, marginBottom: 8 },
-  input: { minHeight: 50, borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, color: nsnColors.text, paddingHorizontal: 14, fontSize: 15, fontWeight: "700" },
+  label: { color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20, marginBottom: 8 },
+  input: { minHeight: 50, borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, color: softHelloColors.text, paddingHorizontal: 14, fontSize: 15, fontWeight: "700" },
   dayInput: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6", color: "#0B1220" },
-  localityStatus: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 7 },
-  localityList: { borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, overflow: "hidden", marginTop: 10 },
-  localityOption: { minHeight: 58, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12, paddingHorizontal: 14, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: nsnColors.border },
+  localityStatus: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 7 },
+  localityList: { borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, overflow: "hidden", marginTop: 10 },
+  localityOption: { minHeight: 58, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12, paddingHorizontal: 14, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: softHelloColors.border },
   localityOptionActive: { backgroundColor: "rgba(56,72,255,0.16)" },
   localityBody: { flex: 1 },
-  localityName: { color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  localityMeta: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 1 },
-  localityCheck: { width: 24, color: nsnColors.muted, fontSize: 16, fontWeight: "900", textAlign: "center" },
-  localityCheckActive: { color: nsnColors.primary },
+  localityName: { color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
+  localityMeta: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 1 },
+  localityCheck: { width: 24, color: softHelloColors.muted, fontSize: 16, fontWeight: "900", textAlign: "center" },
+  localityCheckActive: { color: softHelloColors.primary },
   optionGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
-  intentOption: { minHeight: 44, minWidth: "47%", flexGrow: 1, alignItems: "center", justifyContent: "center", borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface, paddingHorizontal: 12, paddingVertical: 10 },
+  intentOption: { minHeight: 44, minWidth: "47%", flexGrow: 1, alignItems: "center", justifyContent: "center", borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface, paddingHorizontal: 12, paddingVertical: 10 },
   dayChoice: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6" },
-  choiceActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary },
-  choiceText: { color: nsnColors.muted, fontSize: 13, fontWeight: "900", lineHeight: 18, textAlign: "center" },
+  choiceActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary },
+  choiceText: { color: softHelloColors.muted, fontSize: 13, fontWeight: "900", lineHeight: 18, textAlign: "center" },
   choiceTextActive: { color: "#FFFFFF" },
-  primaryButton: { minHeight: 52, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: nsnColors.primary, paddingHorizontal: 18 },
+  primaryButton: { minHeight: 52, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: softHelloColors.primary, paddingHorizontal: 18 },
   primaryButtonDisabled: { opacity: 0.45 },
   primaryButtonText: { color: "#FFFFFF", fontSize: 15, fontWeight: "900", lineHeight: 20 },
   dayCard: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },

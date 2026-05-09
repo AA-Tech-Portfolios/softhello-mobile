@@ -24,7 +24,7 @@ export type AppPalette = {
 export const appPalettes: AppPalette[] = [
   {
     id: "midnight",
-    label: "Midnight NSN",
+    label: "Midnight SoftHello",
     description: "Deep navy with indigo and teal accents.",
     swatches: ["#020814", "#071426", "#3848FF", "#18C8D1", "#FFE5A3"],
   },

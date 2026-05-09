@@ -4,7 +4,7 @@ import { useRouter } from "expo-router";
 import { getLanguageBase, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { nsnColors } from "@/lib/nsn-data";
+import { softHelloColors } from "@/lib/nsn-data";
 import { removeSavedPlace } from "@/lib/softhello-mvp";
 
 const rtlLanguages = new Set(["Arabic", "Hebrew", "Persian", "Urdu", "Yiddish"]);
@@ -244,7 +244,7 @@ export default function SavedPlacesScreen() {
     <ScreenContainer containerClassName="bg-background" safeAreaClassName="bg-background" style={isDay && styles.dayContainer}>
       <ScrollView style={[styles.container, isDay && styles.dayContainer]} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <TouchableOpacity activeOpacity={0.75} onPress={() => router.back()} style={[styles.backButton, isDay && styles.dayIconButton]} accessibilityRole="button" accessibilityLabel="Go back">
-          <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : nsnColors.text} size={24} />
+          <IconSymbol name="chevron.left" color={isDay ? "#0B1220" : softHelloColors.text} size={24} />
         </TouchableOpacity>
 
         <Text style={[styles.title, isDay && styles.dayTitle, isRtl && styles.rtlText]}>{copy.title}</Text>
@@ -256,7 +256,7 @@ export default function SavedPlacesScreen() {
               <View key={place.id} style={[styles.placeCard, isDay && styles.dayCard]}>
                 <View style={[styles.placeHeader, isRtl && styles.rtlRow]}>
                   <View style={[styles.placeIcon, isDay && styles.dayPlaceIcon]}>
-                    <IconSymbol name="location" color={isDay ? "#2F80ED" : nsnColors.text} size={20} />
+                    <IconSymbol name="location" color={isDay ? "#2F80ED" : softHelloColors.text} size={20} />
                   </View>
                   <View style={styles.placeTitleBlock}>
                     <Text style={[styles.placeTitle, isDay && styles.dayTitle, isRtl && styles.rtlText]}>{place.venue}</Text>
@@ -267,7 +267,7 @@ export default function SavedPlacesScreen() {
                   {savedFromLabel}: {place.sourceEventTitle}
                 </Text>
                 <TouchableOpacity activeOpacity={0.82} onPress={() => handleRemove(place.id)} style={[styles.removeButton, isRtl && styles.rtlRow]}>
-                  <IconSymbol name="bookmark" color={nsnColors.day} size={18} />
+                  <IconSymbol name="bookmark" color={softHelloColors.day} size={18} />
                   <Text style={styles.removeButtonText}>{removeLabel}</Text>
                 </TouchableOpacity>
               </View>
@@ -287,7 +287,7 @@ export default function SavedPlacesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: nsnColors.background,
+    backgroundColor: softHelloColors.background,
   },
   content: {
     padding: 20,
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#DCEEFF",
   },
   title: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 28,
     fontWeight: "900",
     marginBottom: 8,
@@ -318,7 +318,7 @@ const styles = StyleSheet.create({
     color: "#0B1220",
   },
   subtitle: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 15,
     lineHeight: 22,
     marginBottom: 20,
@@ -335,8 +335,8 @@ const styles = StyleSheet.create({
   },
   emptyCard: {
     borderWidth: 1,
-    borderColor: nsnColors.border,
-    backgroundColor: nsnColors.surface,
+    borderColor: softHelloColors.border,
+    backgroundColor: softHelloColors.surface,
     borderRadius: 18,
     padding: 18,
   },
@@ -345,13 +345,13 @@ const styles = StyleSheet.create({
     borderColor: "#B8C9E6",
   },
   emptyTitle: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 17,
     fontWeight: "800",
     marginBottom: 6,
   },
   emptyText: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 14,
     lineHeight: 21,
   },
@@ -360,8 +360,8 @@ const styles = StyleSheet.create({
   },
   placeCard: {
     borderWidth: 1,
-    borderColor: nsnColors.border,
-    backgroundColor: nsnColors.surface,
+    borderColor: softHelloColors.border,
+    backgroundColor: softHelloColors.surface,
     borderRadius: 18,
     padding: 16,
   },
@@ -388,19 +388,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   placeTitle: {
-    color: nsnColors.text,
+    color: softHelloColors.text,
     fontSize: 17,
     fontWeight: "900",
     lineHeight: 23,
   },
   placeMeta: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 13,
     lineHeight: 19,
     marginTop: 2,
   },
   placeSource: {
-    color: nsnColors.muted,
+    color: softHelloColors.muted,
     fontSize: 13,
     lineHeight: 19,
     marginTop: 12,
@@ -418,7 +418,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   removeButtonText: {
-    color: nsnColors.day,
+    color: softHelloColors.day,
     fontSize: 12,
     fontWeight: "900",
     lineHeight: 17,

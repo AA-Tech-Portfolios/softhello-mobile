@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Resize and compress the NSN app icon into Expo asset targets.
+"""Resize and compress the SoftHello app icon into Expo asset targets.
 
 Usage:
   python scripts/optimize_nsn_icons.py path/to/source-icon.png
@@ -21,7 +21,7 @@ TARGET_PATHS = [
 
 
 def parse_args():
-    parser = ArgumentParser(description="Optimize the NSN source icon for Expo assets.")
+    parser = ArgumentParser(description="Optimize the SoftHello source icon for Expo assets.")
     parser.add_argument("source", type=Path, help="Source PNG/JPG icon to resize.")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Project root. Defaults to the current directory.")
     return parser.parse_args()

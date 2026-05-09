@@ -6,7 +6,7 @@ import { Alert, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity
 import { ScreenContainer } from "@/components/screen-container";
 import { AustralianLocality, australianLocalities, getAustralianLocalityLabel } from "@/lib/australian-localities";
 import { getLanguageBase, SoftHelloIntent, SoftHelloVisibility, useAppSettings } from "@/lib/app-settings";
-import { nsnColors } from "@/lib/nsn-data";
+import { softHelloColors } from "@/lib/nsn-data";
 import { isAllowedDisplayName, nameNotAllowedMessage } from "@/lib/profile-validation";
 import { defaultComfortPreferences, type SoftHelloComfortPreference } from "@/lib/softhello-mvp";
 
@@ -261,7 +261,7 @@ export default function OnboardingScreen() {
               value={suburb}
               onChangeText={updateSuburb}
               placeholder="Chatswood"
-              placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+              placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
               style={[styles.input, isDay && styles.dayInput]}
             />
             {selectedLocality ? (
@@ -337,7 +337,7 @@ export default function OnboardingScreen() {
                 }
               }}
               placeholder="Sam"
-              placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+              placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
               style={[styles.input, isDay && styles.dayInput]}
             />
             {nameError ? <Text style={[styles.inlineMessage, isDay && styles.dayMessage]}>{nameError}</Text> : null}

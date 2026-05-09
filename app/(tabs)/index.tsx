@@ -5,7 +5,7 @@ import { useRouter } from "expo-router";
 import { getLanguageBase, timezoneOptions, timezoneRegions, type NoiseLevelPreference, type TimezoneRegion, type TimezoneSetting, useAppSettings } from "@/lib/app-settings";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { dayEvents, eveningEvents, type EventItem, noiseLevelOptions, nsnColors } from "@/lib/nsn-data";
+import { dayEvents, eveningEvents, type EventItem, noiseLevelOptions, softHelloColors } from "@/lib/nsn-data";
 import { prioritizeEventsForComfort } from "@/lib/softhello-mvp";
 
 const rtlLanguages = new Set(["Arabic", "Hebrew", "Persian", "Urdu", "Yiddish"]);
@@ -1097,7 +1097,7 @@ export default function HomeScreen() {
 
     const animatedScreenColor = modeTransition.interpolate({
       inputRange: [0, 1],
-      outputRange: [nsnColors.background, "#EAF4FF"],
+      outputRange: [softHelloColors.background, "#EAF4FF"],
     });
 
     const modeGlowOpacity = modePulse.interpolate({
@@ -1139,7 +1139,7 @@ export default function HomeScreen() {
               accessibilityHint="Shows a placeholder for searching events by location, activity, time, group size, or vibe."
               style={[styles.headerActionButton, isDay ? styles.dayBellButton : null]}
             >
-              <IconSymbol name="magnifyingglass" color={isDay ? "#0B1220" : nsnColors.text} size={22} />
+              <IconSymbol name="magnifyingglass" color={isDay ? "#0B1220" : softHelloColors.text} size={22} />
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={0.75}
@@ -1149,7 +1149,7 @@ export default function HomeScreen() {
               accessibilityHint="Shows a placeholder for event view and filter options."
               style={[styles.headerActionButton, isDay ? styles.dayBellButton : null]}
             >
-              <IconSymbol name="ellipsis" color={isDay ? "#0B1220" : nsnColors.text} size={24} />
+              <IconSymbol name="ellipsis" color={isDay ? "#0B1220" : softHelloColors.text} size={24} />
             </TouchableOpacity>
           </View>
         </View>
@@ -1256,9 +1256,9 @@ export default function HomeScreen() {
                 value={timezoneSearch}
                 onChangeText={setTimezoneSearch}
                 placeholder={"searchTimezones" in copy ? copy.searchTimezones : "Search city, country, or timezone"}
-                placeholderTextColor={isDay ? "#6E7F99" : nsnColors.mutedSoft}
+                placeholderTextColor={isDay ? "#6E7F99" : softHelloColors.mutedSoft}
                 style={[styles.timezoneSearchInput, isDay && styles.dayTimezoneSearchInput, isRtl && styles.rtlText]}
-                selectionColor={nsnColors.primary}
+                selectionColor={softHelloColors.primary}
               />
 
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={[styles.timezoneRegionRow, isRtl && styles.rtlRow]}>
@@ -1399,7 +1399,7 @@ export default function HomeScreen() {
         </View>
 
         <TouchableOpacity activeOpacity={0.88} onPress={() => router.push("/(tabs)/events")} style={[styles.createMeetupButton, isRtl && styles.rtlRow]}>
-          <IconSymbol name="add" color={nsnColors.text} size={20} />
+          <IconSymbol name="add" color={softHelloColors.text} size={20} />
           <Text style={[styles.createMeetupButtonText, isRtl && styles.rtlText]}>
             {"createMeetup" in copy ? copy.createMeetup : "Create a Meetup"}
           </Text>
@@ -1433,7 +1433,7 @@ export default function HomeScreen() {
 
 // Styling
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: nsnColors.background },
+  screen: { flex: 1, backgroundColor: softHelloColors.background },
   animatedScreen: { flex: 1 },
   scrollSurface: { flex: 1, backgroundColor: "transparent" },
   modeGlow: { position: "absolute", top: -58, alignSelf: "center", width: 230, height: 230, borderRadius: 115 },
@@ -1453,98 +1453,98 @@ const styles = StyleSheet.create({
   dayTimezoneOption: { borderColor: "#B8C9E6" },
   dayTimezoneSheet: { backgroundColor: "#DCEEFF", borderColor: "#B8C9E6" },
   dayNoiseLevelItem: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6" },
-  dayNoiseLevelItemActive: { backgroundColor: "#EEF7FF", borderColor: nsnColors.primary },
+  dayNoiseLevelItemActive: { backgroundColor: "#EEF7FF", borderColor: softHelloColors.primary },
   content: { paddingHorizontal: 18, paddingTop: 10, paddingBottom: 24 },
   header: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 14 },
   headerTitle: { flex: 1, minWidth: 0 },
   headerActions: { flexShrink: 0, flexDirection: "row", alignItems: "center", gap: 8, marginLeft: 12 },
-  headerActionButton: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface },
+  headerActionButton: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface },
   headerPlaceholderCard: { flexDirection: "row", alignItems: "center", gap: 10, borderRadius: 18, borderWidth: 1, borderColor: "#24426F", backgroundColor: "rgba(255,255,255,0.045)", paddingHorizontal: 14, paddingVertical: 12, marginBottom: 12 },
   dayHeaderPlaceholderCard: { borderColor: "#B8C9E6", backgroundColor: "#F8FBFF" },
   headerPlaceholderBody: { flex: 1, minWidth: 0 },
-  headerPlaceholderTitle: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  headerPlaceholderCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
-  headerPlaceholderDismiss: { minHeight: 32, borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, paddingHorizontal: 13, alignItems: "center", justifyContent: "center" },
+  headerPlaceholderTitle: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  headerPlaceholderCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  headerPlaceholderDismiss: { minHeight: 32, borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, paddingHorizontal: 13, alignItems: "center", justifyContent: "center" },
   dayHeaderPlaceholderDismiss: { borderColor: "#B8C9E6" },
-  headerPlaceholderDismissText: { color: nsnColors.muted, fontSize: 12, fontWeight: "900" },
-  logo: { color: nsnColors.text, fontSize: 25, fontWeight: "800", letterSpacing: -0.4, lineHeight: 32 },
-  moon: { color: nsnColors.day },
-  subtitle: { color: nsnColors.muted, fontSize: 13, lineHeight: 18 },
-  bellButton: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surface },
-  bellText: { color: nsnColors.text, fontSize: 20 },
-  segmented: { flexDirection: "row", borderRadius: 24, padding: 4, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, marginBottom: 12 },
+  headerPlaceholderDismissText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "900" },
+  logo: { color: softHelloColors.text, fontSize: 25, fontWeight: "800", letterSpacing: -0.4, lineHeight: 32 },
+  moon: { color: softHelloColors.day },
+  subtitle: { color: softHelloColors.muted, fontSize: 13, lineHeight: 18 },
+  bellButton: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surface },
+  bellText: { color: softHelloColors.text, fontSize: 20 },
+  segmented: { flexDirection: "row", borderRadius: 24, padding: 4, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, marginBottom: 12 },
   segmentedDay: { backgroundColor: "#DCEEFF", borderColor: "#9FB6D8", },
   segment: { flex: 1, height: 38, borderRadius: 19, alignItems: "center", justifyContent: "center" },
-  segmentDay: { backgroundColor: nsnColors.day },
+  segmentDay: { backgroundColor: softHelloColors.day },
   segmentInactiveDayText: {backgroundColor: "transparent", color: "#6E7F99", },
-  segmentNight: { backgroundColor: nsnColors.primary },
-  segmentText: { color: nsnColors.muted, fontWeight: "700", fontSize: 14 },
+  segmentNight: { backgroundColor: softHelloColors.primary },
+  segmentText: { color: softHelloColors.muted, fontWeight: "700", fontSize: 14 },
   segmentDayText: { color: "#1B2233" },
-  segmentNightText: { color: nsnColors.text },
+  segmentNightText: { color: softHelloColors.text },
   themeSuggestionCard: { flexDirection: "row", alignItems: "flex-start", gap: 11, borderRadius: 18, borderWidth: 1, borderColor: "#24426F", backgroundColor: "rgba(255,255,255,0.045)", paddingHorizontal: 14, paddingVertical: 12, marginBottom: 12 },
   dayThemeSuggestionCard: { borderColor: "#B8C9E6", backgroundColor: "#F8FBFF" },
   themeSuggestionIcon: { fontSize: 22, lineHeight: 27 },
   themeSuggestionBody: { flex: 1, minWidth: 0 },
-  themeSuggestionTitle: { color: nsnColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
-  themeSuggestionCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  themeSuggestionTitle: { color: softHelloColors.text, fontSize: 13, fontWeight: "900", lineHeight: 18 },
+  themeSuggestionCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
   themeSuggestionActions: { flexDirection: "row", alignItems: "center", gap: 8, marginTop: 10 },
-  themeSuggestionSwitch: { minHeight: 32, borderRadius: 16, backgroundColor: nsnColors.primary, paddingHorizontal: 14, alignItems: "center", justifyContent: "center" },
-  themeSuggestionSwitchText: { color: nsnColors.text, fontSize: 12, fontWeight: "900" },
-  themeSuggestionDismiss: { minHeight: 32, borderRadius: 16, borderWidth: 1, borderColor: nsnColors.border, paddingHorizontal: 12, alignItems: "center", justifyContent: "center" },
+  themeSuggestionSwitch: { minHeight: 32, borderRadius: 16, backgroundColor: softHelloColors.primary, paddingHorizontal: 14, alignItems: "center", justifyContent: "center" },
+  themeSuggestionSwitchText: { color: softHelloColors.text, fontSize: 12, fontWeight: "900" },
+  themeSuggestionDismiss: { minHeight: 32, borderRadius: 16, borderWidth: 1, borderColor: softHelloColors.border, paddingHorizontal: 12, alignItems: "center", justifyContent: "center" },
   dayThemeSuggestionDismiss: { borderColor: "#B8C9E6" },
-  themeSuggestionDismissText: { color: nsnColors.muted, fontSize: 12, fontWeight: "800" },
+  themeSuggestionDismissText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "800" },
   contextRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 10 },
-  dateText: { color: nsnColors.text, fontSize: 13, lineHeight: 19 },
-  locationText: { color: nsnColors.muted, fontSize: 12, lineHeight: 18 },
+  dateText: { color: softHelloColors.text, fontSize: 13, lineHeight: 19 },
+  locationText: { color: softHelloColors.muted, fontSize: 12, lineHeight: 18 },
   changeText: { color: "#96A5FF", fontSize: 12, fontWeight: "700" },
   modalBackdrop: { flex: 1, justifyContent: "center", backgroundColor: "rgba(0,0,0,0.45)", padding: 16 },
-  timezoneSheet: { width: "100%", maxWidth: 920, maxHeight: "88%", alignSelf: "center", borderRadius: 20, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: nsnColors.surfaceRaised, padding: 16, gap: 10 },
+  timezoneSheet: { width: "100%", maxWidth: 920, maxHeight: "88%", alignSelf: "center", borderRadius: 20, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: softHelloColors.surfaceRaised, padding: 16, gap: 10 },
   timezoneHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 2 },
-  timezoneTitle: { color: nsnColors.text, fontSize: 18, fontWeight: "800", lineHeight: 24 },
-  autoTimezoneButton: { minHeight: 62, borderRadius: 15, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.03)", paddingHorizontal: 13, justifyContent: "center" },
-  timezoneSearchInput: { minHeight: 46, borderRadius: 15, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.035)", color: nsnColors.text, paddingHorizontal: 13, fontSize: 14, fontWeight: "700" },
+  timezoneTitle: { color: softHelloColors.text, fontSize: 18, fontWeight: "800", lineHeight: 24 },
+  autoTimezoneButton: { minHeight: 62, borderRadius: 15, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.03)", paddingHorizontal: 13, justifyContent: "center" },
+  timezoneSearchInput: { minHeight: 46, borderRadius: 15, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.035)", color: softHelloColors.text, paddingHorizontal: 13, fontSize: 14, fontWeight: "700" },
   dayTimezoneSearchInput: { backgroundColor: "#F8FBFF", borderColor: "#B8C9E6", color: "#0B1220" },
   timezoneRegionRow: { gap: 8, paddingVertical: 2 },
-  timezoneRegionPill: { minHeight: 34, borderRadius: 17, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.03)", paddingHorizontal: 13, alignItems: "center", justifyContent: "center" },
+  timezoneRegionPill: { minHeight: 34, borderRadius: 17, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.03)", paddingHorizontal: 13, alignItems: "center", justifyContent: "center" },
   dayTimezoneRegionPill: { borderColor: "#B8C9E6", backgroundColor: "#EAF4FF" },
-  timezoneRegionPillActive: { borderColor: nsnColors.primary, backgroundColor: nsnColors.primary },
-  timezoneRegionText: { color: nsnColors.muted, fontSize: 12, fontWeight: "800" },
-  timezoneRegionTextActive: { color: nsnColors.text },
+  timezoneRegionPillActive: { borderColor: softHelloColors.primary, backgroundColor: softHelloColors.primary },
+  timezoneRegionText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "800" },
+  timezoneRegionTextActive: { color: softHelloColors.text },
   timezoneList: { maxHeight: 520 },
-  timezoneOption: { minHeight: 58, borderRadius: 15, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "rgba(255,255,255,0.03)", paddingHorizontal: 13, flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
-  timezoneOptionActive: { borderColor: nsnColors.primary },
-  timezoneOptionLabel: { color: nsnColors.text, fontSize: 14, fontWeight: "800", lineHeight: 20 },
-  timezoneOptionMeta: { color: nsnColors.muted, fontSize: 12, lineHeight: 17 },
-  timezoneStatusText: { color: nsnColors.muted, fontSize: 12, fontWeight: "700", lineHeight: 17, paddingHorizontal: 4, paddingVertical: 8 },
-  timezoneCheck: { width: 24, color: nsnColors.muted, fontSize: 16, fontWeight: "900", textAlign: "right" },
-  timezoneCheckActive: { color: nsnColors.primary },
-  weatherCard: { minHeight: 72, flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderRadius: 18, paddingHorizontal: 16, paddingVertical: 13, backgroundColor: nsnColors.surfaceRaised, borderWidth: 1, borderColor: "#1B3566", marginBottom: 12 },
-  weatherTitle: { color: nsnColors.text, fontSize: 14, fontWeight: "800", lineHeight: 20 },
-  weatherCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, maxWidth: 250 },
+  timezoneOption: { minHeight: 58, borderRadius: 15, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "rgba(255,255,255,0.03)", paddingHorizontal: 13, flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  timezoneOptionActive: { borderColor: softHelloColors.primary },
+  timezoneOptionLabel: { color: softHelloColors.text, fontSize: 14, fontWeight: "800", lineHeight: 20 },
+  timezoneOptionMeta: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17 },
+  timezoneStatusText: { color: softHelloColors.muted, fontSize: 12, fontWeight: "700", lineHeight: 17, paddingHorizontal: 4, paddingVertical: 8 },
+  timezoneCheck: { width: 24, color: softHelloColors.muted, fontSize: 16, fontWeight: "900", textAlign: "right" },
+  timezoneCheckActive: { color: softHelloColors.primary },
+  weatherCard: { minHeight: 72, flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderRadius: 18, paddingHorizontal: 16, paddingVertical: 13, backgroundColor: softHelloColors.surfaceRaised, borderWidth: 1, borderColor: "#1B3566", marginBottom: 12 },
+  weatherTitle: { color: softHelloColors.text, fontSize: 14, fontWeight: "800", lineHeight: 20 },
+  weatherCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, maxWidth: 250 },
   weatherIcon: { fontSize: 28 },
   filterRow: { gap: 8, paddingBottom: 14 },
-  noiseGuideCard: { borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "#06101F", padding: 14, marginBottom: 14 },
+  noiseGuideCard: { borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "#06101F", padding: 14, marginBottom: 14 },
   noiseGuideHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 },
-  noiseGuideTitle: { color: nsnColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
-  noiseGuideCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  noiseGuideTitle: { color: softHelloColors.text, fontSize: 14, fontWeight: "900", lineHeight: 20 },
+  noiseGuideCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 2 },
   noiseLevelRow: { flexDirection: "row", gap: 8, marginBottom: 12 },
   noiseLevelItem: { flex: 1, minHeight: 78, borderRadius: 14, borderWidth: 1, borderColor: "#172B49", backgroundColor: "rgba(255,255,255,0.03)", alignItems: "center", justifyContent: "center", paddingHorizontal: 8, paddingVertical: 10 },
-  noiseLevelItemActive: { borderColor: nsnColors.primary, backgroundColor: "rgba(56,72,255,0.16)" },
+  noiseLevelItemActive: { borderColor: softHelloColors.primary, backgroundColor: "rgba(56,72,255,0.16)" },
   noiseLevelIcon: { fontSize: 20, lineHeight: 24, marginBottom: 4 },
-  noiseLevelTitle: { color: nsnColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
-  noiseLevelTitleActive: { color: nsnColors.text },
-  noiseLevelCopy: { color: nsnColors.muted, fontSize: 11, lineHeight: 15, textAlign: "center" },
-  noiseLevelCopyActive: { color: nsnColors.text },
+  noiseLevelTitle: { color: softHelloColors.text, fontSize: 12, fontWeight: "900", lineHeight: 17, textAlign: "center" },
+  noiseLevelTitleActive: { color: softHelloColors.text },
+  noiseLevelCopy: { color: softHelloColors.muted, fontSize: 11, lineHeight: 15, textAlign: "center" },
+  noiseLevelCopyActive: { color: softHelloColors.text },
   noiseFilterRow: { gap: 8 },
-  pill: { height: 34, paddingHorizontal: 16, borderRadius: 17, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: "#13243E", alignItems: "center", justifyContent: "center" },
-  pillActive: { backgroundColor: nsnColors.primary, borderColor: nsnColors.primary },
-  pillText: { color: nsnColors.muted, fontWeight: "700", fontSize: 12 },
-  pillTextActive: { color: nsnColors.text },
+  pill: { height: 34, paddingHorizontal: 16, borderRadius: 17, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: "#13243E", alignItems: "center", justifyContent: "center" },
+  pillActive: { backgroundColor: softHelloColors.primary, borderColor: softHelloColors.primary },
+  pillText: { color: softHelloColors.muted, fontWeight: "700", fontSize: 12 },
+  pillTextActive: { color: softHelloColors.text },
   sectionHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 9 },
-  sectionTitle: { color: nsnColors.text, fontSize: 16, fontWeight: "800", lineHeight: 22 },
+  sectionTitle: { color: softHelloColors.text, fontSize: 16, fontWeight: "800", lineHeight: 22 },
   seeAll: { color: "#96A5FF", fontSize: 12, fontWeight: "700" },
   cardStack: { gap: 10 },
-  eventCard: { flexDirection: "row", minHeight: 126, borderRadius: 18, backgroundColor: nsnColors.surface, borderWidth: 1, borderColor: nsnColors.border, padding: 10, overflow: "hidden" },
+  eventCard: { flexDirection: "row", minHeight: 126, borderRadius: 18, backgroundColor: softHelloColors.surface, borderWidth: 1, borderColor: softHelloColors.border, padding: 10, overflow: "hidden" },
   rtlEventCard: { flexDirection: "row-reverse" },
   eventImage: { width: 88, borderRadius: 14, alignItems: "center", justifyContent: "center" },
   eventEmoji: { fontSize: 34 },
@@ -1554,36 +1554,36 @@ const styles = StyleSheet.create({
   rtlBlock: { alignItems: "flex-end" },
   rtlText: { textAlign: "right", writingDirection: "rtl" },
   smallTag: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 9, backgroundColor: "rgba(114,214,126,0.18)" },
-  smallTagText: { color: nsnColors.green, fontSize: 10, fontWeight: "800" },
+  smallTagText: { color: softHelloColors.green, fontSize: 10, fontWeight: "800" },
   daySmallTag: { backgroundColor: "#D9F0DD", },
   daySmallTagText: { color: "#3E6F47", },
-  eventTitle: { flex: 1, color: nsnColors.text, fontSize: 14, fontWeight: "800", lineHeight: 19 },
-  eventMeta: { color: nsnColors.muted, fontSize: 11, lineHeight: 16 },
+  eventTitle: { flex: 1, color: softHelloColors.text, fontSize: 14, fontWeight: "800", lineHeight: 19 },
+  eventMeta: { color: softHelloColors.muted, fontSize: 11, lineHeight: 16 },
   eventMetaDay: { color: "#CBD7EA", },
-  eventDescription: { color: nsnColors.text, fontSize: 12, lineHeight: 17, marginTop: 2 },
+  eventDescription: { color: softHelloColors.text, fontSize: 12, lineHeight: 17, marginTop: 2 },
   eventTags: { flexDirection: "row", gap: 6, flexWrap: "wrap", marginTop: 7 },
-  eventTagText: { color: nsnColors.muted, fontSize: 10, lineHeight: 14, backgroundColor: "rgba(255,255,255,0.05)", paddingHorizontal: 7, paddingVertical: 3, borderRadius: 8, overflow: "hidden" },
+  eventTagText: { color: softHelloColors.muted, fontSize: 10, lineHeight: 14, backgroundColor: "rgba(255,255,255,0.05)", paddingHorizontal: 7, paddingVertical: 3, borderRadius: 8, overflow: "hidden" },
   livePreview: { width: 82, height: 104, borderRadius: 15, borderWidth: 1, borderColor: "#24426F", backgroundColor: "#081A2F", overflow: "hidden", marginLeft: 6 },
   miniMap: { height: 42, backgroundColor: "#102743", overflow: "hidden", justifyContent: "flex-end", paddingHorizontal: 7, paddingBottom: 5 },
   mapRoad: { position: "absolute", backgroundColor: "rgba(148,163,184,0.28)", borderRadius: 10 },
   mapRoadMain: { width: 94, height: 9, left: -7, top: 15, transform: [{ rotate: "-14deg" }] },
   mapRoadCross: { width: 9, height: 58, right: 21, top: -8, transform: [{ rotate: "22deg" }] },
-  mapPinDot: { position: "absolute", right: 26, top: 14, width: 11, height: 11, borderRadius: 6, borderWidth: 2, borderColor: nsnColors.text, backgroundColor: nsnColors.cyan },
-  mapPlaceText: { color: nsnColors.text, fontSize: 9, fontWeight: "900", lineHeight: 12 },
-  livePhoto: { height: 62, width: "100%", backgroundColor: nsnColors.surfaceSoft },
+  mapPinDot: { position: "absolute", right: 26, top: 14, width: 11, height: 11, borderRadius: 6, borderWidth: 2, borderColor: softHelloColors.text, backgroundColor: softHelloColors.cyan },
+  mapPlaceText: { color: softHelloColors.text, fontSize: 9, fontWeight: "900", lineHeight: 12 },
+  livePhoto: { height: 62, width: "100%", backgroundColor: softHelloColors.surfaceSoft },
   liveBadge: { position: "absolute", left: 6, bottom: 6, minHeight: 19, borderRadius: 10, backgroundColor: "rgba(2,8,20,0.78)", flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: 6 },
-  liveDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: nsnColors.cyan },
-  liveBadgeText: { color: nsnColors.text, fontSize: 9, fontWeight: "900" },
+  liveDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: softHelloColors.cyan },
+  liveBadgeText: { color: softHelloColors.text, fontSize: 9, fontWeight: "900" },
   cardArrow: { width: 30, alignItems: "center", justifyContent: "center" },
-  cardArrowText: { color: nsnColors.text, fontSize: 32, lineHeight: 34 },
-  createMeetupButton: { height: 50, borderRadius: 15, marginTop: 14, marginBottom: 2, backgroundColor: nsnColors.primary, overflow: "hidden", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7 },
-  createMeetupButtonText: { color: nsnColors.text, fontSize: 15, fontWeight: "900", lineHeight: 20 },
+  cardArrowText: { color: softHelloColors.text, fontSize: 32, lineHeight: 34 },
+  createMeetupButton: { height: 50, borderRadius: 15, marginTop: 14, marginBottom: 2, backgroundColor: softHelloColors.primary, overflow: "hidden", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 7 },
+  createMeetupButtonText: { color: softHelloColors.text, fontSize: 15, fontWeight: "900", lineHeight: 20 },
   insightGrid: { flexDirection: "row", gap: 10, marginTop: 16 },
-  insightCard: { flex: 1, minHeight: 116, borderRadius: 18, borderWidth: 1, borderColor: nsnColors.border, backgroundColor: "#06101F", padding: 14 },
+  insightCard: { flex: 1, minHeight: 116, borderRadius: 18, borderWidth: 1, borderColor: softHelloColors.border, backgroundColor: "#06101F", padding: 14 },
   insightIcon: { fontSize: 25, marginBottom: 7 },
-  insightTitle: { color: nsnColors.text, fontWeight: "800", fontSize: 13, lineHeight: 18 },
-  insightCopy: { color: nsnColors.muted, fontSize: 12, lineHeight: 17, marginTop: 3 },
-  moreInfoText: { color: nsnColors.warning, fontSize: 12, lineHeight: 17, fontWeight: "800", marginTop: 8 },
-  insightDetail: { color: nsnColors.muted, fontSize: 12, lineHeight: 18, marginTop: 6 },
+  insightTitle: { color: softHelloColors.text, fontWeight: "800", fontSize: 13, lineHeight: 18 },
+  insightCopy: { color: softHelloColors.muted, fontSize: 12, lineHeight: 17, marginTop: 3 },
+  moreInfoText: { color: softHelloColors.warning, fontSize: 12, lineHeight: 17, fontWeight: "800", marginTop: 8 },
+  insightDetail: { color: softHelloColors.muted, fontSize: 12, lineHeight: 18, marginTop: 6 },
   insightEmoji: { fontSize: 22, marginBottom: 6, marginTop: 2},
 });

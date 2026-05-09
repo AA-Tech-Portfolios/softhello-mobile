@@ -1,6 +1,6 @@
-# SoftHello / NSN 🌫️✨
+# SoftHello
 
-A privacy-first social meetup and connection platform designed for introverts, shy-spoken people, and privacy-conscious users.
+SoftHello is a low-pressure social discovery platform focused on meaningful local connections.
 
 Built with Expo, React Native, and TypeScript.
 
@@ -8,7 +8,7 @@ Built with Expo, React Native, and TypeScript.
 
 SoftHello is a calm, low-pressure way to meet people through small groups, clear expectations, gradual trust, and user-controlled privacy.
 
-The product began as **NSN - North Shore Nights**, a mobile-first local meetup prototype for Sydney's North Shore. NSN remains the local prototype identity, while SoftHello is the broader product direction.
+The product began as a mobile-first local meetup prototype for Sydney's North Shore. SoftHello is now the broader product direction.
 
 ## Who It Is For
 
@@ -40,7 +40,7 @@ The current prototype focuses on Sydney's North Shore, but the architecture is m
 
 ## SoftHello Prototype Branch
 
-This branch also documents the next global product direction: **SoftHello v1.1**. The repo remains `nsn-mobile`, and North Shore Nights remains the local prototype identity, but SoftHello is the calm, events-first MVP direction for a broader audience.
+This branch also documents the next global product direction: **SoftHello v1.1**. The repo remains `nsn-mobile` for now, but SoftHello is the calm, events-first MVP direction for a broader audience.
 
 SoftHello planning docs:
 
@@ -52,11 +52,11 @@ SoftHello planning docs:
 - [`docs/softhello-privacy-comfort-trust-roadmap.md`](docs/softhello-privacy-comfort-trust-roadmap.md) - privacy, comfort, visibility, atmosphere, and trust roadmap.
 - [`docs/user-experience-roadmap.md`](docs/user-experience-roadmap.md) - phased trust, safety, comfort, and personalisation roadmap.
 - [`docs/softhello-ux-principles.md`](docs/softhello-ux-principles.md) - calm, ND-friendly, low-pressure UX rules.
-- [`docs/brand-systems.md`](docs/brand-systems.md) - SoftHello global brand system and NSN local visual system.
+- [`docs/brand-systems.md`](docs/brand-systems.md) - SoftHello global brand system and legacy local visual system.
 
 ## Product Intent
 
-Many social apps assume users are ready for big groups, loud events, or open-ended networking. NSN is designed for people who may be shy, reserved, new to an area, or simply more comfortable with structured, smaller meetups.
+Many social apps assume users are ready for big groups, loud events, or open-ended networking. SoftHello is designed for people who may be shy, reserved, new to an area, or simply more comfortable with structured, smaller meetups.
 
 Core principles:
 
